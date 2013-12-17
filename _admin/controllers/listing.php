@@ -38,7 +38,7 @@ class listing extends Application_controller
         }
 
         if( !!$_GET[ 'id' ] ) {
-            $data = $model->where( 'main_pages_id = :main_pages_id' )->all( array( 'main_pages_id' => $_GET[ 'id' ] ) );
+            $data = $model->where( 'main_pages_id = :main_pages_id' )->order_by( 'ordered', ASC )->all( array( 'main_pages_id' => $_GET[ 'id' ] ) );
         }
         else {
             $data = $model->all( $binds );
