@@ -1,0 +1,1 @@
+17-12-2013 17:49:00 Core/Database/Query: GetObj error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'example_demo.example_demo_uploads' doesn't exist

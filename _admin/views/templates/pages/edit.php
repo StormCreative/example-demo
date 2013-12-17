@@ -19,7 +19,22 @@
 			<p><label>Title:</label><input type="text" name="pages[title]" class="medium_input" value="<?php echo $title; ?>"></p>
 			Content <textarea class="js-wysiwyg" name="pages[content]"><?php echo $content; ?></textarea>
 
-			<div class="js-upload-container" data-type="image"></div>
+			<h2>Header Image</h2>
+			<div class="js-upload-container" data-type="image" data-name="header-image"></div>
+			<?php if( !!$image_imgname ) : ?>
+				<div id="<?php echo $image_imgname; ?>" class="image_<?php echo $image_id; ?>">
+			        <span class="images_holder"><img src="<?php echo DIRECTORY; ?>_admin/assets/uploads/images/<?php echo $image_imgname; ?>" /></span>
+			        <ol class="hoz btns">
+			            <input type="hidden" name="multi-image[<?php echo $image_imgname; ?>][id]" value="<?php echo $image_id;; ?>" />
+			            <input type="hidden" name="multi-image[<?php echo $image_imgname; ?>][imgname]" value="<?php echo $image_imgname; ?>" />
+			            <input type="button" class="del-image js-delete-image delete-btn" data-id="<?php echo $image_id;; ?>" data-imagename="<?php echo $image_imgname; ?>"  data-type="<?php echo $image_imgname; ?>" value="Delete" />
+			        </ol>
+			    </div>
+			<?php endif; ?>
+
+			<h2>Banner Images</h2>
+			<div class="js-upload-container" data-type="image" data-name="banner-images"></div>
+
 			<?php if ( !!$gallery_items ) : ?>
 				<?php foreach ( $gallery_items as $item ) : ?>
 				    <div id="<?php echo $item['imgname'] ?>" class="image_<?php echo $item[ 'id' ]; ?>">
@@ -27,7 +42,7 @@
 				        <ol class="hoz btns">
 				            <input type="hidden" name="multi-image[<?php echo $item[ 'imgname' ]; ?>][id]" value="<?php echo $item[ 'id' ]; ?>" />
 				            <input type="hidden" name="multi-image[<?php echo $item[ 'imgname' ]; ?>][imgname]" value="<?php echo $item[ 'imgname' ]; ?>" />
-				            <input type="button" class="del-image js-delete-image delete-btn" data-id="<?php echo $item[ 'id' ]; ?>" data-imagename="<?php echo $item[ 'imgname' ]; ?>"  data-type="<?php echo $item[ 'imgname' ]; ?>" value="Delete" /></li>
+				            <input type="button" class="del-image js-delete-image delete-btn" data-id="<?php echo $item[ 'id' ]; ?>" data-imagename="<?php echo $item[ 'imgname' ]; ?>"  data-type="<?php echo $item[ 'imgname' ]; ?>" value="Delete" />
 				        </ol>
 				    </div>
 				<?php endforeach; ?>
@@ -71,6 +86,6 @@
 	</article>
 </section>
 <script>
-	var image_count = <?php echo ( !!$image ? '999' : '0' ); ?>;
-	var document_count = <?php echo ( !!$uploads_id && !!$upload_name ? '999' : '0' ); ?>
+	var image_count = <?php echo ( !!$image ? '0' : '0' ); ?>;
+	var document_count = <?php echo ( !!$uploads_id && !!$upload_name ? '0' : '0' ); ?>
 </script>

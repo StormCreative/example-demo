@@ -23,7 +23,7 @@ define(['../../../../assets/scripts/utils/api-caller', 'Backbone'], function(api
             this.container_count = this.upload_count;
 
             this.image;
-            this.image_container = $( '.js-images' );
+            //this.image_container = $( '.js-images' );
             this.new_width;
             this.new_height;
 
@@ -51,13 +51,20 @@ define(['../../../../assets/scripts/utils/api-caller', 'Backbone'], function(api
 
         append_upload_area: function () {
 
-            $( '.js-upload-container' ).append( '<p class="js-error"><p>' +
-                                                '<div class="js-image-upload-container">' +
-                                                    '<input type="hidden" name="normal_uploader" value="1" />' + 
-                                                    '<input type="file" class="js-image-upload" name="image[]" multiple />' +
-                                                    '<span class="action">Upload Image</span>' +
-                                                '</div>' +
-                                                '<div class="js-images"></div>' );
+            var image_containers = $( '.js-upload-container' );
+
+            for( var i = 0; i < image_containers.length; i++ ) {
+
+                var type = $( image_containers[i] ).attr( 'data-name' );
+
+                $( image_containers[i] ).append( '<p class="js-error"><p>' +
+                                                    '<div class="js-image-upload-container">' +
+                                                        '<input type="hidden" name="normal_uploader" value="1" />' + 
+                                                        '<input type="file" class="js-image-upload" name="' + ( type == 'header-image' ? 'image[]' : 'images[]' ) + '" multiple data-name="' + type + '" />' +
+                                                        '<span class="action">Upload Image</span>' +
+                                                    '</div>' +
+                                                    '<div class="js-images js-' + type + '"></div>' );
+            }
 
             //We also need to set one up if the page allows document uploads
             $( '.js-uploads-container' ).append ( '<p class="js-document-error"><p>' +
@@ -70,6 +77,12 @@ define(['../../../../assets/scripts/utils/api-caller', 'Backbone'], function(api
         },
 
         get_image: function ( e ) {
+
+            var target = e.target,
+                type = $( target ).attr( 'data-name' );
+
+            this.container_type = type;
+            this.image_container = $( '.js-' + type );
 
             var all_files = $( e )[0].target.files,
                 total_images = all_files.length;
@@ -195,7 +208,6 @@ define(['../../../../assets/scripts/utils/api-caller', 'Backbone'], function(api
 
             //Take 1 away from the total uploaded property
             this.upload_count--;
-
         },
 
         /**
@@ -223,9 +235,12 @@ define(['../../../../assets/scripts/utils/api-caller', 'Backbone'], function(api
             else if ( $.inArray( extension, allowed_extensions ) == -1 ) {
                 return [ false, 'Wrong file type' ];
             }
+
+            /**
             else if ( this.upload_count >= this.total_images_allowed ) {
                 return [ false, 'Your are only allowed a total of "' + this.total_images_allowed + '" images' ];
             }
+            **/
 
             return [ true ];
         },
@@ -236,12 +251,13 @@ define(['../../../../assets/scripts/utils/api-caller', 'Backbone'], function(api
                 imagename = $( target ).attr( 'data-imagename' ),
                 image_id = $( target ).attr( 'data-id' );
 
-
-            $.ajax({ url: this.site_path + 'AJAX_delete/normal_delete',
+            $.ajax({ url: this.site_path + 'ajax_delete/normal_delete',
                      data: { imagename: imagename },
                      type: 'POST',
                      dataType: 'JSON',
                      success: _.bind(function ( data ) {
+
+                        console.log( data );
                         
                          if ( data[ 'status' ] == 200 )
                          {
