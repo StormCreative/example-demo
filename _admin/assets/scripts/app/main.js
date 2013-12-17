@@ -12,7 +12,7 @@ requirejs.config({
     }
 });
 
-require( ['../views/Wysiwyg','settings', 'mobilenav'], function (Wysiwyg) {
+require( ['../views/Wysiwyg','settings', 'mobilenav', 'add-another-link'], function (Wysiwyg) {
     var wysiwyg = new Wysiwyg();
 });
 

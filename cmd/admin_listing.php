@@ -246,7 +246,7 @@ class admin_listing extends base_admin
      */
     private function form_query_create ()
     {
-        if ($this->_table_exists === TRUE) {
+        if($this->_table_exists === TRUE) {
             display ( "The table '" . $this->_controller_name . "' already exists.\n" );
         } else {
             $query = 'CREATE TABLE ' . DB_SUFFIX . '_' . $this->_controller_name . ' (

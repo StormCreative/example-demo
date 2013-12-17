@@ -4,12 +4,10 @@ class AJAX_login
 {
     public function index ()
     {
-    
         if (!!$_POST) {
 
             $access = new access_model();
-
-            $data = $access->where( "username = :username" )->where( "password = :password" )->all( array ( "username" => $_POST[ 'username' ], 'password' => sha1 ( $_POST[ 'password' ] ) ) );
+            $data = $access->where( "username = :username AND password = :password" )->all( array( "username" => $_POST[ 'username' ], 'password' => sha1( $_POST[ 'password' ] ) ) );
 
             if (!!$data) {
                 //Set up the users ID in the session

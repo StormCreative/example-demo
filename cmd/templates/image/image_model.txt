@@ -1,8 +1,15 @@
 <?php
+namespace app\models\image;
 
-class image_model extends active_record
+class Image_model extends Activerecord
 {
-	
+	public function __Construct()
+    {
+        parent::__Construct();
+
+        $this->has_one = "";
+        $this->has_many = array();
+    }
 }
 
 

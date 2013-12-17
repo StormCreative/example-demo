@@ -16,7 +16,7 @@ define(['../../../../assets/scripts/utils/api-caller', 'Backbone'], function(api
             //Define some properties
             this.all_images = [];
             this.upload_count = !!window.image_count ? window.image_count : 0;
-            this.total_images_allowed = !!window.number_of_images ? window.number_of_images : 1;
+            this.total_images_allowed = !!window.number_of_images ? window.number_of_images : 999;
             this.image_info;
 
             //Need a separate count for the ID of the container because using the same count as the upload_count causes duplicate classes on div
@@ -30,7 +30,7 @@ define(['../../../../assets/scripts/utils/api-caller', 'Backbone'], function(api
             //Define some properties for the document upload
             this.document_name;
             this.document_upload_count = !!window.document_count ? window.document_count : 0;
-            this.total_documents_allowed = 1;
+            this.total_documents_allowed = 999;
             this.document_info;
             this.document_container = $( '.js-documents' );
         },

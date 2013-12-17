@@ -1,8 +1,15 @@
 <?php
+namespace app\models\access;
 
-class access_model extends active_record
+class Access_model extends Activerecord
 {
+	public function __Construct()
+    {
+        parent::__Construct();
 
+        $this->has_one = "";
+        $this->has_many = array();
+    }
 }	
 
 ?>
