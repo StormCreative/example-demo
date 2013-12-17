@@ -258,8 +258,6 @@ define(['../../../../assets/scripts/utils/api-caller', 'Backbone'], function(api
                      type: 'POST',
                      dataType: 'JSON',
                      success: _.bind(function ( data ) {
-
-                        console.log( data );
                         
                          if ( data[ 'status' ] == 200 )
                          {

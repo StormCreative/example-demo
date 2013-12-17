@@ -161,14 +161,7 @@ define(['jquery'], function($) {
 	 */
 	function success ( file, data, response ) {
 
-		//console.log( file );
-		//console.log( response );
 		var data = $.parseJSON( data );
-		//console.log( data );
-
-		console.log( data.filename );
-		console.log( data.type );
-		console.log( file.name );
 
 		if ( data.type == 'image' )
 		{
