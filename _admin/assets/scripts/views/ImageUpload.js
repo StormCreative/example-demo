@@ -330,8 +330,8 @@ define(['../../../../assets/scripts/utils/api-caller', 'Backbone'], function(api
                 //We get the document name from the input field
                 //From here we need to append the document name and a delete button 
                 this.document_container.append( '<div>' +
-                                                    '<input type="text" name="upload_name[user]" value="' + this.document_name + '" />' +
-                                                    '<input type="hidden" name="upload_name[actual]" value="' + this.document_name + '" />' +
+                                                    '<input type="text" name="upload_name[user][]" value="' + this.document_name + '" />' +
+                                                    '<input type="hidden" name="upload_name[actual][]" value="' + this.document_name + '" />' +
                                                     ' - <button type="button" class="js-documents-delete">X Remove</button>' +
                                                 '</div>' );
 
@@ -396,11 +396,13 @@ define(['../../../../assets/scripts/utils/api-caller', 'Backbone'], function(api
                 upload_id = $( target ).attr( 'data-id' );
 
             //Send the upload id so the row in the uploads table can be deleted and the upload name so the file can be unset
-            $.ajax({ url: this.site_path + 'AJAX_delete/normal_upload',
+            $.ajax({ url: this.site_path + 'ajax_delete/normal_upload',
                      data: { id: upload_id, name: upload_name },
                      type: 'POST',
                      dataType: 'JSON',
                      success: function ( data ) {
+
+                        console.log( data );
 
                          if ( data[ 'status' ] == 200 ) {
                              $( target ).parent().remove();
