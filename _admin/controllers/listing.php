@@ -41,10 +41,6 @@ class listing extends Application_controller
 
         //We dont actually want a approved column so we need to unset it from the columns array before we explode it
         $x_columns = explode ( ',', $columns );
-        // Why the hell is this unsetting the second columna and ALWAYS assuming there is an approved?
-        // What if you want multiple columns they just get deleted and screw the entire table up...
-        // When this is used something better needs to be thought up than just assuming you can unset the second value...!!!!!!!
-        //unset( $x_columns[ 2 ] );
 
         $this->addTag('columns', $x_columns);
         $this->addTag('data', $data);

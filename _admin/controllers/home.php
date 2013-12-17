@@ -4,6 +4,7 @@ class home extends C_Controller
 {
     public function index ()
     {
+    	
         $this->addStyle ( 'login' );
         $this->setScript ( 'login' );
 
