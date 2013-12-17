@@ -12,6 +12,9 @@
 </div>
 <div class="grid__third">
 	<div class="example">
-		
+		<img src="<?php echo DIRECTORY; ?>assets/images/side-red.jpg" class="side-img" />
+		<img src="<?php echo DIRECTORY; ?>assets/images/side-green.jpg" class="side-img" />
+		<img src="<?php echo DIRECTORY; ?>assets/images/side-blue.jpg" class="side-img" />
+
 	</div>
 </div>
