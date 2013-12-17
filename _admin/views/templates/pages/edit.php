@@ -80,6 +80,10 @@
 				</div>
 			<?php endif; ?>
 
+			<h2>SEO</h2>
+			<p><label>Meta title:</label><input type="text" name="pages[meta_title]" class="medium_input" value="<?php echo $meta_title; ?>"></p>
+			<p><label>Meta Description:</label><input type="text" name="pages[meta_description]" class="medium_input" value="<?php echo $meta_description; ?>"></p>
+
 			<p><a href="#" class="js-add-another-link">Add another +</a></p>
 
 			<p><input type="submit" name="submit" value="Save" /></p>
