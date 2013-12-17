@@ -1,11 +1,11 @@
 <!-- Inline navigation with the logo on the left and links on the right. Also this type of nav can be made to be fixed -->
 <nav class="nav nav-inline mobile-nav">
 	<div class="container grid">
-		<p class="nav__logo"><a href="<?php echo DIRECTORY; ?>" title="Pegisis">Pegisis</a></p>
+		<p class="nav__logo"><a href="<?php echo DIRECTORY; ?>" title="Example">Example</a></p>
 		<p class="nav__mobile-icon"><a href="" class="js-toggle-nav">&#9776;</a></p>
 		<ul class="nav__links grid__three-quarter">
-			<li class="nav__links--dropdown">
-				<a href="" title="link 1">Link 1</a>
+			<li>
+				<a href="" class="js-toggle-subnav" title="link 1">Link 1</a>
 				<div class="nav__sublinks">
 					<ul class="nav__sublinks--links">
 						<li><a href="">Link 1a</a></li>

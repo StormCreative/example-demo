@@ -22,7 +22,7 @@ $sprite: url("#{$image-path}sprite.png");
 $sprite-retina: url("#{$image-path}retina/sprite_2x.png");
 
 // Media queries - if media queries are not being used then set to false
-$MQs: true !default;
+$MQs: false !default;
 
 // Grid - if grids are not needed then set to false
 $grid: true !default;

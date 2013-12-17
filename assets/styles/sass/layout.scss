@@ -1,2 +1,12 @@
 @import "framework/structure";
 @import "elements/hide";
+
+header {
+	img {
+		display: block;
+		height: 220px;
+		margin: 0 auto;
+		max-width: 100%;
+		width: 960px;
+	}
+}
