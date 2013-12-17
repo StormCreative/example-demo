@@ -644,6 +644,19 @@ fieldset {
 	-moz-border-radius: 4px;
 }
 
+.uploader-input {
+	border: none !important;
+	line-height: 0;
+
+	&:focus {
+		border: none;
+
+		-webkit-box-shadow: none;
+		   -moz-box-shadow: none;
+				box-shadow: none;
+	}
+}
+
 
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {

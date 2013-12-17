@@ -60,7 +60,7 @@ define(['../../../../assets/scripts/utils/api-caller', 'Backbone'], function(api
                 $( image_containers[i] ).append( '<p class="js-error"><p>' +
                                                     '<div class="js-image-upload-container js-upload-container-' + type + '">' +
                                                         '<input type="hidden" name="normal_uploader" value="1" />' + 
-                                                        '<input type="file" class="js-image-upload" name="' + ( type == 'header-image' ? 'image[]' : 'images[]' ) + '" multiple data-name="' + type + '" />' +
+                                                        '<input type="file" class="js-image-upload uploader-input" name="' + ( type == 'header-image' ? 'image[]' : 'images[]' ) + '" multiple data-name="' + type + '" />' +
                                                         '<span class="action">Upload Image</span>' +
                                                     '</div>' +
                                                     '<div class="js-images js-' + type + '"></div>' );
@@ -70,7 +70,7 @@ define(['../../../../assets/scripts/utils/api-caller', 'Backbone'], function(api
             $( '.js-uploads-container' ).append ( '<p class="js-document-error"><p>' +
                                                   '<div class="js-document-upload-container">' +
                                                       '<input type="hidden" name="normal_uploader" value="1" />' + 
-                                                      '<input type="file" class="js-document-upload" name="uploads[]" />' +
+                                                      '<input type="file" class="js-document-upload uploader-input" name="uploads[]" />' +
                                                       '<span class="action">Upload File</span>' +
                                                   '</div>' +
                                                   '<div class="js-documents"></div>' );

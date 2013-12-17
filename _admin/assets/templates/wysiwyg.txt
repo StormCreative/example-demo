@@ -19,7 +19,7 @@
 		<li data-wysihtml5-command="fontSize" data-wysihtml5-command-value="large">large</li>-->
 	</ul>
 	<div data-wysihtml5-dialog="createLink" style="display: none;">
-		<label>
+		<label class="wysiwyg-save-label">
 	  		Link:
 	  		<input data-wysihtml5-dialog-field="href" value="http://" class="text">
 		</label>
