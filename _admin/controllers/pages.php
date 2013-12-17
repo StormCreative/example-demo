@@ -21,24 +21,19 @@ class pages extends application_controller
 
 		if ( post_set() )
 		{
-			
+			//die( print_r( $_FILES ) );
 			//Handle the image
             if ( !!$_POST["image"] || !!$_FILES ) {
-
-            	Image_helper::multi_image_move( $_FILES[ 'images' ] );
-
-            	if( !!$_POST[ 'image' ] ) {
-            		$_POST[ "pages" ][ "image_id" ] = Image_helper::save_one( $_POST[ "image" ] );
-            	}
-
-            	if( !!$_POST['multi-image'] ) {
-            		$_POST[ "pages" ][ "image_id" ] = Image_helper::save_one( $_POST['multi-image'] );
-            	}
-                
+            	$_POST[ "pages" ][ "image_id" ] = Image_helper::save_one( $_POST[ "image" ] );
             }
             else {
                 $_POST[ "pages" ][ "image_id" ] = NULL;
             }
+
+            Image_helper::multi_image_move( $_FILES[ 'images' ] );
+            if( !!$_POST['multi-image'] ) {
+        		$_POST[ "pages" ][ "gallery" ] = implode( ',', Image_helper::save_many( $_POST['multi-image'] ) );
+        	}
 
 			//If the user has selected some files to upload run this
            //Send the $_FILES array to the application controller for the saving to be handled

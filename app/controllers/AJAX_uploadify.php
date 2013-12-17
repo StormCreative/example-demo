@@ -7,11 +7,13 @@ class AJAX_uploadify
     private $_image_path;
     private $_name;
 
-    public function __Construct($uploadify = TRUE)
+    public function __Construct($uploadify = TRUE, $single = FALSE)
     {
         
         $this->_uploadify = $uploadify;
         $this->_image_path = PATH . '_admin/assets/uploads/';
+
+        $this->single = $single;
 
         $this->save();
     }
@@ -33,10 +35,10 @@ class AJAX_uploadify
             $true_tmp_name = $this->get_true_data( 'tmp_name' );
             $true_name = $this->get_true_data( 'name' );
 
-            $filename = $this->get_random_name ( $true_name );
+            $filename = $this->get_random_name( $true_name );
 
-            if ( in_array ( $this->get_ext ( $filename ), $options[ 'file_type' ] ) ) {
-                if (1 == 2) {
+            if ( in_array ( $this->get_ext( $filename ), $options[ 'file_type' ] ) ) {
+                if ( LIVE ) {
                     $im = new Imagick ( $tempFile );
                     $im->setImageCompressionQuality ( 100 );
                     $im->cropThumbnailImage ( 500, 350 );
@@ -91,10 +93,17 @@ class AJAX_uploadify
      */
     private function get_true_data($type)
     {
+        if( $this->single == TRUE ) {
+            $files = $_FILES[ 'image' ];
+        }
+        else {
+            $files = $_FILES[ 'images' ];
+        }
+
         if ($this->_uploadify == TRUE) {
-            $data = $_FILES[ 'image' ][ $type ];
+            $data = $files[ $type ];
         } else {
-            $data = $_FILES[ 'image' ][ $type ][0];
+            $data = $files[ $type ][0];
         }
 
         return $data;

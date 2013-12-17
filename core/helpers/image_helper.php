@@ -16,7 +16,7 @@ class Image_helper
         $image = new Image_model();
 
         if (!!$_POST[ 'normal_uploader' ] && !$imagename) {
-            $uploader = new Ajax_uploadify ( FALSE );
+            $uploader = new Ajax_uploadify ( FALSE, TRUE );
             $imagename = $uploader->get_name ();
         }
 
@@ -41,8 +41,6 @@ class Image_helper
     {
         $ids = array();
 
-        die( print_r( $images ) );
-
         foreach ($images as $image) {
 
             if (!!$image[ 'imgname' ]) {
@@ -66,27 +64,23 @@ class Image_helper
      */
     public static function multi_image_move()
     {
-        
-        $n = count( $_FILES[ 'images' ][ 'name' ] ) - 1;
+        $n = count( $_FILES[ 'images' ][ 'name' ] );
 
         for ($i = 0; $i < $n; $i++) {
             $uploader = new AJAX_uploadify( FALSE );
             $_POST['multi-image'][] = array( 'imgname' => $uploader->get_name() );
 
-            unset( $_FILES[ 'image' ][ 'name' ][ 0 ] );
-            unset( $_FILES[ 'image' ][ 'type' ][ 0 ] );
-            unset( $_FILES[ 'image' ][ 'tmp_name' ][ 0 ] );
-            unset( $_FILES[ 'image' ][ 'error' ][ 0 ] );
-            unset( $_FILES[ 'image' ][ 'size' ][ 0 ] );
+            unset( $_FILES[ 'images' ][ 'name' ][ 0 ] );
+            unset( $_FILES[ 'images' ][ 'type' ][ 0 ] );
+            unset( $_FILES[ 'images' ][ 'tmp_name' ][ 0 ] );
+            unset( $_FILES[ 'images' ][ 'error' ][ 0 ] );
+            unset( $_FILES[ 'images' ][ 'size' ][ 0 ] );
 
-            $_FILES[ 'image' ][ 'name' ] = array_values( $_FILES[ 'image' ][ 'name' ] );
-            $_FILES[ 'image' ][ 'type' ] = array_values( $_FILES[ 'image' ][ 'type' ] );
-            $_FILES[ 'image' ][ 'tmp_name' ] = array_values( $_FILES[ 'image' ][ 'tmp_name' ] );
-            $_FILES[ 'image' ][ 'error' ] = array_values( $_FILES[ 'image' ][ 'error' ] );
-            $_FILES[ 'image' ][ 'size' ] = array_values( $_FILES[ 'image' ][ 'size' ] );
+            $_FILES[ 'images' ][ 'name' ] = array_values( $_FILES[ 'images' ][ 'name' ] );
+            $_FILES[ 'images' ][ 'type' ] = array_values( $_FILES[ 'images' ][ 'type' ] );
+            $_FILES[ 'images' ][ 'tmp_name' ] = array_values( $_FILES[ 'images' ][ 'tmp_name' ] );
+            $_FILES[ 'images' ][ 'error' ] = array_values( $_FILES[ 'images' ][ 'error' ] );
+            $_FILES[ 'images' ][ 'size' ] = array_values( $_FILES[ 'images' ][ 'size' ] );
         }
-
-
-            die( print_r( $_POST ) );
     }
 }

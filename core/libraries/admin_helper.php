@@ -10,10 +10,10 @@ class admin_helper
             $image_model = new image_model();
             $image_model->find( $image );
 
+            unset( $image_model->attributes[ 'validates' ] );
+
             $images[] = $image_model->attributes;
         }
-
-        unset( $images[0][ 'validates' ] );
 
         return array_filter( $images );
     }
