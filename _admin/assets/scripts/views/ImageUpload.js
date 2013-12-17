@@ -71,7 +71,7 @@ define(['../../../../assets/scripts/utils/api-caller', 'Backbone'], function(api
                                                   '<div class="js-document-upload-container">' +
                                                       '<input type="hidden" name="normal_uploader" value="1" />' + 
                                                       '<input type="file" class="js-document-upload uploader-input" name="uploads[]" />' +
-                                                      '<span class="action">Upload File</span>' +
+                                                      //'<span class="action">Upload File</span>' +
                                                   '</div>' +
                                                   '<div class="js-documents"></div>' );
         },
