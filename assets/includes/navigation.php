@@ -1,8 +1,7 @@
+<img src="<?php echo DIRECTORY; ?>assets/images/top-search.jpg" />
 <nav class="nav nav-inline mobile-nav">
 	<div class="container grid">
-		<p class="nav__logo"><a href="<?php echo DIRECTORY; ?>" title="Example">Example</a></p>
-		<p class="nav__mobile-icon"><a href="" class="js-toggle-nav">&#9776;</a></p>
-		<ul class="nav__links grid__three-quarter">
+		<ul class="nav__links">
 			<li>
 				<a href="" class="js-toggle-subnav" title="link 1" id="link1">Link A</a>
 				<div class="nav__sublinks">

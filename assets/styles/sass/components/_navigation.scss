@@ -12,6 +12,7 @@ at what can be deleted and what can't.
 
 .nav {
 	background: $nav-colour;
+	margin: 0.5em 0;
 	
 	@include bp(desktop){
 		line-height: $nav-height;
@@ -111,7 +112,6 @@ MOBILE NAVIGATION
 			a {
 				color: $nav-font-color;
 				text-decoration: none;
-				text-transform: uppercase;
 				@include transition;
 
 				&:hover,
@@ -213,7 +213,6 @@ INLINE NAVIGATION
 	a {
 		color: $nav-font-color;
 		text-decoration: none;
-		text-transform: uppercase;
 		@include transition;
 
 		&:hover,
@@ -284,7 +283,6 @@ NAV WITH LOGO IN THE MIDDLE
 	a {
 		color: $nav-font-color;
 		text-decoration: none;
-		text-transform: uppercase;
 		@include transition;
 
 		&:hover,

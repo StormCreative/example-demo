@@ -33,6 +33,7 @@ STRUCTURE
 }
 
 body {
+	background: #F2F2F2;
 	font: #{($base-font-size / 16px) * 1em} / #{$line-height-ratio} $base-font-family;
 	margin: 0;
 
@@ -70,4 +71,5 @@ h1 {
 
 img {
 	border: none;
+	display: block;
 }

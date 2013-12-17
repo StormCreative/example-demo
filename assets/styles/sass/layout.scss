@@ -71,3 +71,31 @@ a {
 		background: darken(#ED1B24, 15%);
 	}
 }
+
+/* new */
+
+.document-link {
+	color: #000;
+	display: inline-block;
+	margin: 1em 0;
+	text-decoration: none;
+
+	&:hover span,
+	&:focus span {
+		text-decoration: underline;
+	}
+
+	img {
+		display: inline-block;
+		height: 40px;
+		margin-right: 1em;
+		vertical-align: middle;
+		width: 41px;
+	}
+
+	span {
+		display: inline-block;
+		margin: 0;
+		vertical-align: middle;
+	}
+}
