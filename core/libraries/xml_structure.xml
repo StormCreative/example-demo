@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<test>
+    <test>
+        <sub>
+            <sub-sub>
+                hi
+            </sub-sub>
+        </sub>
+        <hello>
+            test
+        </hello>
+    </test>
+    <foo>
+        bar
+    </foo>
+</test>
