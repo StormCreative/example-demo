@@ -34,6 +34,9 @@
 			<h2>Banner Images</h2>
 			<div class="js-upload-container" data-type="image" data-name="banner-images"></div>
 
+			<div id="image-list-multi-js"></div>
+			<input type="file" name="file_upload" id="multi-image-page" />
+
 			<?php if ( !!$gallery_items ) : ?>
 				<?php foreach ( $gallery_items as $item ) : ?>
 				    <div id="<?php echo $item['imgname'] ?>" class="image_<?php echo $item[ 'id' ]; ?>">

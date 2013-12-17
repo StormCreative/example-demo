@@ -402,8 +402,6 @@ define(['../../../../assets/scripts/utils/api-caller', 'Backbone'], function(api
                      dataType: 'JSON',
                      success: function ( data ) {
 
-                        console.log( data );
-
                          if ( data[ 'status' ] == 200 ) {
                              $( target ).parent().remove();
                          }

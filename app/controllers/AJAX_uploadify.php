@@ -38,6 +38,7 @@ class AJAX_uploadify
             $filename = $this->get_random_name( $true_name );
 
             if ( in_array ( $this->get_ext( $filename ), $options[ 'file_type' ] ) ) {
+
                 if ( LIVE ) {
                     $im = new Imagick ( $tempFile );
                     $im->setImageCompressionQuality ( 100 );
@@ -101,7 +102,7 @@ class AJAX_uploadify
         }
 
         if ($this->_uploadify == TRUE) {
-            $data = $files[ $type ];
+            $data = $_FILES[ 'image' ][ $type ];
         } else {
             $data = $files[ $type ][0];
         }

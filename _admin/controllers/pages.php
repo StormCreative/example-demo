@@ -48,7 +48,7 @@ class pages extends application_controller
 
 				//If the user has selected some files to upload run this
 	           //Send the $_FILES array to the application controller for the saving to be handled
-	           if ( !!$_FILES[ "uploads" ] ) {
+	           if ( !!$_FILES[ "uploads" ] || !!$_POST[ 'downloads' ] ) {
 	               Document_helper::save( $this->_pages->attributes[ 'id' ] );
 	           }
 			}

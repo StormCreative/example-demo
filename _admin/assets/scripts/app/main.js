@@ -22,4 +22,4 @@ if ( window.File && window.FileReader && window.FileList && window.Blob ) {
     });
 }
 else
-    require([ 'uploader' ]);
+    require([ 'uploader', 'multi-image-uploadify' ]);

@@ -102,7 +102,7 @@ define(['jquery'], function($) {
 		        'requeueErrors'    : settings.requeueErrors || false,
 		        'successTimeout'   : settings.successTimeout || 30,
 		        'swf'              : window.site_path + 'assets/scripts/utils/uploadify/uploadify.swf',
-		        'uploader'         : window.site_route+'AJAX_uploadify',
+		        'uploader'         : window.site_route+'ajax_uploadify',
 		        'uploadLimit'      : settings.uploadLimit || 999,
 		        'width'            : settings.width || 120,
 		        'z-index'		   : '1',
@@ -161,8 +161,14 @@ define(['jquery'], function($) {
 	 */
 	function success ( file, data, response ) {
 
-		var data = $.parseJSON ( data );
-		
+		//console.log( file );
+		//console.log( response );
+		var data = $.parseJSON( data );
+		//console.log( data );
+
+		console.log( data.filename );
+		console.log( data.type );
+		console.log( file.name );
 
 		if ( data.type == 'image' )
 		{
@@ -208,11 +214,63 @@ define(['jquery'], function($) {
 	
 	//For some reason the on click didnt work so I had to do it like this
 	$(document).on('click', '.js-delete-image', function(e) {
-		$( this ).parent().parent().remove();
+		var target = e.target;
+            imagename = $( target ).attr( 'data-imagename' ),
+            image_id = $( target ).attr( 'data-id' );
+
+        $.ajax({ url: window.site_path.replace( '_admin', 'admin' ) + 'ajax_delete/normal_delete',
+                 data: { imagename: imagename },
+                 type: 'POST',
+                 dataType: 'JSON',
+                 success: _.bind(function ( data ) {
+                    
+                     if ( data[ 'status' ] == 200 )
+                     {
+                        //In order to make this fit into the admin frame work I will need to unset all the files inputs
+                        $( '.js-hidden-name' ).val( '' );
+
+                        var file_input = $( '.js-image-upload' ),
+                            count = file_input.length;
+
+                        for ( i = 0; i < count; i++ ) {
+                            $( file_input[ i ] ).val( '' );
+                        }
+
+                        $( '.js-saved-image' ).remove();
+                        $( '.image_' + image_id ).remove();
+
+                        this.upload_count--;
+
+                     }
+                     else if ( data[ 'status' ] == 400 )
+                        $( ".js-error" ).text( data[ 'msg' ] );
+
+                 }, this )
+        });
 	});
 
 	$(document).on('click', '.js-delete-upload', function(e) {
-		$( '.js-existing-upload-container' ).remove();
+
+		var target = e.target,
+            upload_name = $( target ).attr( 'data-upload-name' ),
+            upload_id = $( target ).attr( 'data-id' );
+
+        //Send the upload id so the row in the uploads table can be deleted and the upload name so the file can be unset
+        $.ajax({ url: window.site_path.replace( '_admin', 'admin' ) + 'ajax_delete/normal_upload',
+                 data: { id: upload_id, name: upload_name },
+                 type: 'POST',
+                 dataType: 'JSON',
+                 success: function ( data ) {
+
+                     if ( data[ 'status' ] == 200 ) {
+                         $( target ).parent().remove();
+                     }
+                     else if ( data[ 'status' ] == 400 ) {
+                        $( '.js-document-error' ).text( 'Upload could not be deleted at this time.' );
+                     }
+
+                 }
+        });
 	});
 	
 	//Because the imagename is being returned with its extension we need to escape the full stop for jQuery
