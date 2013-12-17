@@ -40,6 +40,7 @@ class home extends C_Controller
         $this->addTag( 'meta_desc', $pages_model->seo_desc);
 
         $this->addTag('image', $image);
+        $this->addTag('show_accept', true);
 
         $this->addStyle('layout');
         $this->setView('home/page');
