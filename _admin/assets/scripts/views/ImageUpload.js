@@ -58,7 +58,7 @@ define(['../../../../assets/scripts/utils/api-caller', 'Backbone'], function(api
                 var type = $( image_containers[i] ).attr( 'data-name' );
 
                 $( image_containers[i] ).append( '<p class="js-error"><p>' +
-                                                    '<div class="js-image-upload-container">' +
+                                                    '<div class="js-image-upload-container js-upload-container-' + type + '">' +
                                                         '<input type="hidden" name="normal_uploader" value="1" />' + 
                                                         '<input type="file" class="js-image-upload" name="' + ( type == 'header-image' ? 'image[]' : 'images[]' ) + '" multiple data-name="' + type + '" />' +
                                                         '<span class="action">Upload Image</span>' +
@@ -184,7 +184,7 @@ define(['../../../../assets/scripts/utils/api-caller', 'Backbone'], function(api
         fiddle_input: function () {
 
             var input_file_buttons = $( '.js-image-upload' ),
-                input_file_container = $( '.js-image-upload-container' );
+                input_file_container = $( '.js-upload-container-' + this.container_type );
 
             for ( i = 0; i < input_file_buttons.length; i++ ) {
 
@@ -194,7 +194,7 @@ define(['../../../../assets/scripts/utils/api-caller', 'Backbone'], function(api
             }
 
             //Append a new input onto the container so the user still only see one upload button
-            input_file_container.append ( '<input type="file" class="js-image-upload" name="image[]" value="Upload a photo" />' );
+            input_file_container.append ( '<input type="file" class="js-image-upload" name="' + ( this.container_type == 'header-image' ? 'image[]' : 'images[]' ) + '" value="Upload a photo" />' );
         },
 
         remove_image: function ( e ) {
