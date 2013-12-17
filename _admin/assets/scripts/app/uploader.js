@@ -176,7 +176,7 @@ define(['jquery'], function($) {
 			if ( image_multi == true )
 			{
 				image_list.append ( '<div id="' + data.filename + '">' +
-					                '<span><img src="' + site_path + 'assets/uploads/images/' + data.filename + '" /></span>' +
+					                '<span><img src="' + site_path + 'assets/uploads/images/281/' + data.filename + '" /></span>' +
 					                '<ol class="hoz btns">' +
 					                	'<input type="hidden" name="multi-image[' + data.filename + '][id]" value="" />' +
 					                	'<input type="hidden" name="multi-image[' + data.filename + '][imgname]" value="' + data.filename + '" />' +
@@ -186,7 +186,7 @@ define(['jquery'], function($) {
 			}
 			else
 			{
-				image_list.append ( '<p id="' + data.filename + '"><img src="' + window.site_path + 'assets/uploads/images/' + data.filename + '" title="' + file.name + '" /><input type="hidden" name="image" value="' + data.filename + '" /><input type="button" class="btn del-image delete-image-js" data-imagename="' + data.filename + '" data-type="' + data.type + '" value="Delete" /></p>' );
+				image_list.append ( '<p id="' + data.filename + '"><img src="' + window.site_path + 'assets/uploads/images/281/' + data.filename + '" title="' + file.name + '" /><input type="hidden" name="image" value="' + data.filename + '" /><input type="button" class="btn del-image delete-image-js" data-imagename="' + data.filename + '" data-type="' + data.type + '" value="Delete" /></p>' );
 			}
 
 			$('#imgname').val ( data.filename );
