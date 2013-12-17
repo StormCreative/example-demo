@@ -14,10 +14,10 @@ $line-height-ratio: 1.4;
 $grid-margin: 8px;
 
 // Nav settings
-$nav-colour: #ED1B24;
+$nav-colour: #CCC;
 $subnav-colour: #E8E8E8;
 
-$nav-font-color: #FFF;
+$nav-font-color: #000;
 $subnav-font-color: #000;
 
 $nav-fixed: false !default;
@@ -29,12 +29,12 @@ $subnav-toggle: true !default;
 $subnav-hover: false !default;
 
 //Brand
-$brand-colour: #ED1B24;
+$brand-colour: #CCC;
 
 // Containers
 $container-padding: 8px;
 $container-width: 960px !default;
-$wrapper-width: 100% !default;
+$wrapper-width: 960px !default;
 
 // Errors
 $error-bgcolour: #ED1B24;

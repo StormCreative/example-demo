@@ -41,7 +41,7 @@ body {
 }
 
 .wrapper {
-	//margin: auto;
+	margin: auto;
 	max-width: $wrapper-width;
 
 	@if ($MQs) == false {

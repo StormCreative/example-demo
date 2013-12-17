@@ -43,7 +43,7 @@
 | are in use.
 |
 */
-	$settings[ 'MEDIA_QUERIES' ] = TRUE;
+	$settings[ 'MEDIA_QUERIES' ] = FALSE;
 
 /*
 |----------------------------------------------------------------

@@ -24,7 +24,7 @@ If you need to change the way a sector is styled then add a class and style that
 		display: block;
 		list-style: none;
 		padding: ($grid-margin / 2) $grid-margin;
-		text-align: center;
+		//text-align: center;
 		vertical-align: top;
 		width: 100%; // default all our classes that have grid__ will be 100% for our mobile
 
@@ -101,7 +101,6 @@ If you need to change the way a sector is styled then add a class and style that
 }
 
 .example {
-	background: #E8E8E8;
 	margin: 0;
 	padding: 0.5em;
 }

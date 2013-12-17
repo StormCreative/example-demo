@@ -116,7 +116,7 @@ MOBILE NAVIGATION
 
 				&:hover,
 				&:focus {
-					color: darken($nav-font-color,15%);
+					color: lighten($nav-font-color,25%);
 				}
 			}
 		}
@@ -156,7 +156,7 @@ INLINE NAVIGATION
 
 	.container {
 		@include bp(desktop){
-			padding: 0 $container-padding;
+			padding: 0 1em;
 		}
 	}
 
@@ -193,7 +193,7 @@ INLINE NAVIGATION
 		@include bp(desktop) {
 			background: none;
 			display: inline-block;
-			text-align: right;
+			text-align: center;
 		}
 		
 		li {
@@ -211,14 +211,14 @@ INLINE NAVIGATION
 	}
 
 	a {
-		color: #FFF;
+		color: $nav-font-color;
 		text-decoration: none;
 		text-transform: uppercase;
 		@include transition;
 
 		&:hover,
 		&:focus {
-			color: darken(#FFF,15%);
+			color: lighten($nav-font-color,25%);
 		}
 	}
 }
@@ -282,14 +282,14 @@ NAV WITH LOGO IN THE MIDDLE
 	}
 
 	a {
-		color: #FFF;
+		color: $nav-font-color;
 		text-decoration: none;
 		text-transform: uppercase;
 		@include transition;
 
 		&:hover,
 		&:focus {
-			color: darken(#FFF,15%);
+			color: lighten($nav-font-color,25%);
 		}
 	}
 }
@@ -352,14 +352,14 @@ This will place the logo about the nav links in a central aligned position
 	}
 
 	a {
-		color: #FFF;
+		color: $nav-font-color;
 		text-decoration: none;
 		text-transform: uppercase;
 		@include transition;
 
 		&:hover,
 		&:focus {
-			color: darken(#FFF,15%);
+			color: lighten($nav-font-color,25%);
 		}
 	}
 }
@@ -397,6 +397,7 @@ NAV - LINK HOVER BRINGS DROPDOWN
 @if ($subnav-hover) == true {
 
 	.nav {
+
 		.nav__links {
 			line-height: $nav-height;
 			padding: 0 $container-padding;
@@ -465,21 +466,32 @@ NAV - LINK TOGGLE BRINGS DROPDOWN
 
 @if ($subnav-toggle) == true {
 	.nav {
+		li {
+			position: relative;
+		}
+
 		.nav__sublinks {
 			background: $subnav-colour;
 			display: none;
-			height: $subnav-height;
-			left: 0;
+			//height: $subnav-height;
+			left: -16px;
 			position: absolute;
-			text-align: center;
-			top: 100%;
-			width: 100% !important;
+			text-align: left;
+			top: 43px;
+			width: 150px !important;
 		}
 
 		.nav__sublinks--links {
+			list-style: none;
 			margin: auto;
 			max-width: $container-width;
 			padding: ($container-padding * 2);
+
+			li {
+				display: list-item;
+				margin: 0;
+				padding: 0;
+			}
 		}
 	}
 }

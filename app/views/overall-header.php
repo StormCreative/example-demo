@@ -31,4 +31,7 @@
         <div class="wrapper">
             <?php require "assets/includes/ie-notification.php"; flush(); ?>
             <?php include "assets/includes/navigation.php"; ?>
+            <header>
+                <img src="<?php echo DIRECTORY; ?>assets/images/header-home.jpg" />
+            </header>
             <div class="container content grid">

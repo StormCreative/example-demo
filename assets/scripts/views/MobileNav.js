@@ -28,14 +28,14 @@ define(['Backbone'], function(){
                 var nav_height = nav.height();
                 var subnav_height = subnav.height();
 
-                subnav.hide();
+                //subnav.hide();
 
                 $(e.target).next().slideToggle('normal');
 
                 if (nav.css('position') == 'fixed') {
                     $('.content').animate({marginTop: nav_height + subnav_height + 'px'}, 500);
                 } else {
-                    $('.content').animate({marginTop: subnav_height + 'px'}, 500);
+                    //$('.content').animate({marginTop: subnav_height + 'px'}, 500);
                 }
 
             } else {

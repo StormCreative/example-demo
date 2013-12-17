@@ -19,7 +19,7 @@ FOOTER
 */
 
 .footer {
-	background: #A1A1A1;
+	background: #CCC;
 	text-align: center;
 
 	.footer__links {
@@ -29,14 +29,14 @@ FOOTER
 		}
 
 		a {
-			color: lighten(#000, 20%);
+			color: #000;
 			text-decoration: none;
 
 			@include transition;
 
 			&:hover,
 			&:focus {
-				color: lighten(#000, 40%);
+				color: lighten(#000, 25%);
 			}
 		}
 	}

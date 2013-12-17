@@ -4,7 +4,7 @@ class home extends C_Controller
 {
     public function index ()
     {
-    	
+
         $this->addStyle ( 'login' );
         $this->setScript ( 'login' );
 
@@ -13,4 +13,6 @@ class home extends C_Controller
         $this->setView ( 'home/index' );
 
     }
+
+    
 }

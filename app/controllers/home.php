@@ -21,5 +21,18 @@ class home extends C_Controller
 
         $this->setView('home/index');
     }
+
+    public function page($id="")
+    {
+        $pages_model = new Pages_model();
+
+        $pages_model->find($id);
+
+        $this->addTag('page', $pages_model->attributes);
+        
+        // Whatever these SEO bits are in the database table
+        $this->addTag('title', $pages_model->seo_title);
+        $this->addTag( 'meta_desc', $pages_model->seo_desc);
+    }
     
 }
