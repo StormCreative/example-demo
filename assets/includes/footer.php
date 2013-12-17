@@ -1,16 +1,14 @@
 <footer class="footer">
 	<div class="container">
 		<ul class="footer__links">
-			<li><a href="">Link 1<a></li>
-			<li><a href="">Link 2<a></li>
-			<li><a href="">Link 3<a></li>
-			<li><a href="">Link 4<a></li>
-			<li><a href="">Link 5<a></li>
-			<li><a href="">Link 6<a></li>
+			<li><a href="<?php echo DIRECTORY; ?>home/page_1">Link A<a></li>
+			<li><a href="<?php echo DIRECTORY; ?>home/page_2">Link B<a></li>
+			<li><a href="<?php echo DIRECTORY; ?>home/page_3">Link C<a></li>
+			<li><a href="<?php echo DIRECTORY; ?>home/page_4">Link D<a></li>
 		</ul>
 	</div>
 </footer>
 <div class="changes">
-	<a href="#" class="btn accept-btn">Accept</a>
-	<a href="#" class="btn decline-btn">Decline</a>
+	<a href="<?php echo DIRECTORY; ?>admin/listing/table/pages" class="btn accept-btn">Accept</a>
+	<a href="<?php echo DIRECTORY; ?>admin/pages/edit/<?php echo $page_data['id']; ?>" class="btn decline-btn">Decline</a>
 </div>

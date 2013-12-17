@@ -52,6 +52,8 @@ class pages extends application_controller
 					$this->process_links();
 				}
 			}
+
+			header('location: '.DIRECTORY.'home/page/'.$this->_pages->attributes['id']);
 		}
 
 		$this->_pages->find( $this->_pages->attributes[ 'id' ] );

@@ -4,7 +4,7 @@
 
                 <input type="hidden" class="js-title-raw" value="<?php echo $table; ?>" />
                 <p class="page_name"><span class="js-title"><?php echo ucfirst(str_replace( "_", " ", $table)); ?></span> listing</p>
-                <a href="#" class="js-reset">Reset</a>
+                
 
 
                 <a href="#" class="js-filter">Filter</a>

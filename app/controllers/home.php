@@ -13,9 +13,9 @@ class home extends C_Controller
         */
         
         
-        $this->addTag ('title', 'Home');
-        $this->addTag ( 'meta_keywords', 'Pegisis');
-        $this->addTag ( 'meta_desc', 'Pegisis');
+        $this->addTag('title', 'Home');
+        $this->addTag('meta_keywords', 'Pegisis');
+        $this->addTag('meta_desc', 'Pegisis');
         $this->addTag('home_page', true);
 
         $this->addStyle('layout');
@@ -42,28 +42,31 @@ class home extends C_Controller
         $this->addTag('image', $image);
 
         $this->addStyle('layout');
-
         $this->setView('home/page');
     }
 
     public function page_1()
     {
-
+        $this->addStyle('layout');
+        $this->setView('home/page_1');
     }
 
     public function page_2()
     {
-        
+        $this->addStyle('layout');
+        $this->setView('home/page_2');
     }
 
     public function page_3()
     {
-        
+        $this->addStyle('layout');
+        $this->setView('home/page_3');
     }
 
     public function page_4()
     {
-        
+        $this->addStyle('layout');
+        $this->setView('home/page_4');
     }
     
 }

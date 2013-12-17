@@ -41,8 +41,13 @@ class AJAX_uploadify
                 if ( LIVE ) {
                     $im = new Imagick ( $tempFile );
                     $im->setImageCompressionQuality ( 100 );
-                    $im->cropThumbnailImage ( 500, 350 );
-                    $im->writeImage ( $options[ 'dest' ] . $filename );
+                    $im->thumbnailImage ( 280, 0, FALSE );
+                    $im->writeImage ( $options[ 'dest' ] .'280/'. $filename );
+
+                    $im = new Imagick ( $tempFile );
+                    $im->setImageCompressionQuality ( 100 );
+                    $im->thumbnailImage ( 960, 0, FALSE );
+                    $im->writeImage ( $options[ 'dest' ] .'960/'. $filename );
                 } else {
                     $si = new simple_image ();
                     $si->load ( $true_tmp_name );
