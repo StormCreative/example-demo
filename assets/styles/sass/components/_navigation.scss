@@ -475,10 +475,11 @@ NAV - LINK TOGGLE BRINGS DROPDOWN
 			display: none;
 			//height: $subnav-height;
 			left: -16px;
+			min-width: 220px;
 			position: absolute;
+			right: 0;
 			text-align: left;
 			top: 43px;
-			width: 150px !important;
 		}
 
 		.nav__sublinks--links {
@@ -491,6 +492,10 @@ NAV - LINK TOGGLE BRINGS DROPDOWN
 				display: list-item;
 				margin: 0;
 				padding: 0;
+			}
+
+			a {
+				font-size: 0.875em;
 			}
 		}
 	}

@@ -7,7 +7,7 @@
 				<a href="" class="js-toggle-subnav" title="link 1" id="link1">Link 1</a>
 				<div class="nav__sublinks">
 					<ul class="nav__sublinks--links">
-						<li><a href="">Link 1a</a></li>
+						<li><a href="">Test page 2 for extra</a></li>
 						<li><a href="">Link 1b</a></li>
 						<li><a href="">Link 1c</a></li>
 						<li><a href="">Link 1d</a></li>
