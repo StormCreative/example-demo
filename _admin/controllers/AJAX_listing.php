@@ -20,13 +20,16 @@ class AJAX_listing
     public function delete ()
     {
         if (!!$_POST) {
-            $name = $_POST[ 'table' ] . '_model';
-            $model = new $name();
 
-            if ( $model->delete ( $_POST[ 'ids' ] ) )
-                $return = array( 'deleted' );
-            else
-                $return = array( 'not deleted' );
+            foreach( $_POST[ 'ids' ] as $id ) {
+                $name = $_POST[ 'table' ] . '_model';
+                $model = new $name();
+
+                if ( $model->delete( '', $id ) )
+                    $return = array( 'deleted' );
+                else
+                    $return = array( 'not deleted' );
+            }
         }
 
         die( json_encode( $return ) );
