@@ -8,7 +8,7 @@ class AJAX_delete
     public function __Construct ()
     {
         $this->_image = new image_model();
-        $this->_upload = new uploads_model();
+        //$this->_upload = new uploads_model();
     }
 
     public function normal_delete ()

@@ -32,9 +32,11 @@
             <?php require "assets/includes/ie-notification.php"; flush(); ?>
             <?php include "assets/includes/navigation.php"; ?>
             <header>
-                <?php if (!!Image_model::get_image_info($image_id)) : ?>
-                <img src="<?php echo DIRECTORY; ?>_admin/assets/uploads/images/960-220/<?php echo Image_model::get_image_info($image_id); ?>" />
-                <?php else; ?>
+                <?php if (!!$image) : ?>
+                <img src="<?php echo DIRECTORY; ?>_admin/assets/uploads/images/960-220/<?php echo $image; ?>" />
+                <?php elseif ($home_page): ?>
+                <img src="<?php echo DIRECTORY; ?>assets/images/header-grey-home.jpg" />
+                <?php else: ?>
                 <img src="<?php echo DIRECTORY; ?>assets/images/header-grey.jpg" />
                 <?php endif; ?>
             </header>

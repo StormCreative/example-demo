@@ -1,6 +1,6 @@
 <?php
 
-class home extends application_controller
+class Home extends \core\site\Application_controller
 {
 	public function index ()
 	{

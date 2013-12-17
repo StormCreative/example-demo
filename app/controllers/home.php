@@ -16,6 +16,7 @@ class home extends C_Controller
         $this->addTag ('title', 'Home');
         $this->addTag ( 'meta_keywords', 'Pegisis');
         $this->addTag ( 'meta_desc', 'Pegisis');
+        $this->addTag('home_page', true);
 
         $this->addStyle('layout');
 
@@ -26,13 +27,21 @@ class home extends C_Controller
     {
         $pages_model = new Pages_model();
 
+        $image_model = new Image_model();
+
+        $image = $image_model->get_image_info($pages_model->image_id);
+
         $pages_model->find($id);
 
-        $this->addTag('page', $pages_model->attributes);
-        
+        $this->addTag('page_data', $pages_model->attributes);
+
         // Whatever these SEO bits are in the database table
         $this->addTag('title', $pages_model->seo_title);
         $this->addTag( 'meta_desc', $pages_model->seo_desc);
+
+        $this->addTag('image', $image);
+
+        $this->addStyle('layout');
 
         $this->setView('home/page');
     }

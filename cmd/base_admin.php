@@ -1,20 +1,18 @@
 <?php
 
-error_reporting ( 1 );
-ini_set ( 'display_errors', 'on' );
+error_reporting(1);
+ini_set('display_errors', 'on');
 
-define( "DR", getcwd() );
+define("DR", getcwd());
 
 //We need to use a autoloader because im not going to include everything like a chump
 //Apart from the autoloader itself of course!
 include 'core/loader/autoloader.php';
 include 'core/settings/database.php';
-include 'core/settings/application-settings.php';
 include 'core/settings/site.php';
 include 'core/config/config.php';
 
-$loader = new autoloader ();
-$loader->autoload ( $classname );
+Autoloader::autoload();
 
 abstract class Base_admin
 {
@@ -27,16 +25,16 @@ abstract class Base_admin
      * From now on we will be using the database classes we already have
      * This is because the mysql_* functions are shit
      */
-    public function __Construct ()
+    public function __Construct()
     {
         //Set a new path for the admin folder as a property
         $this->_admin_path = PATH . "_admin/";
 
-        $this->check_functions ();
+        $this->check_functions();
 
         //Instantiate the query and operations objects
-        $this->_query = new query ();
-        $this->_operations = new operations ();
+        $this->_query = new Query();
+        $this->_operations = new Operations();
     }
 
     /**
@@ -45,7 +43,7 @@ abstract class Base_admin
      *
      * @access private
      */
-    private function check_functions ()
+    private function check_functions()
     {
         if ( !function_exists ( 'get_input' ) )
             include 'cmd/functions.php';

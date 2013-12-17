@@ -1,8 +1,15 @@
 <?php
+namespace app\models\uploads;
 
-class uploads_model extends active_record
+class Uploads_model extends \core\site\Activerecord
 {
-	
+	public function __Construct()
+    {
+        parent::__Construct();
+
+        $this->has_one = "";
+        $this->has_many = array();
+    }
 }
 
 ?>

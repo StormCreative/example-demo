@@ -1,6 +1,7 @@
 <?php
+namespace app\models\{{MODEL}};
 
-class {{MODEL}}_model extends activerecord
+class {{MODEL}}_model extends \core\site\Activerecord
 {
 	public function __Construct ()
 	{

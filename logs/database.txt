@@ -1,0 +1,12 @@
+17-12-2013 17:49:00 Core/Database/Query: GetObj error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'example_demo.example_demo_uploads' doesn't exist
+17-12-2013 18:26:29 Core/Database/Query: GetAssoc error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pages_id' in 'where clause'
+17-12-2013 18:26:29 Core/Database/Query: GetAssoc error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pages_id' in 'where clause'
+17-12-2013 18:26:30 Core/Database/Query: GetAssoc error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pages_id' in 'where clause'
+17-12-2013 18:26:31 Core/Database/Query: GetAssoc error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pages_id' in 'where clause'
+17-12-2013 18:26:33 Core/Database/Query: GetAssoc error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pages_id' in 'where clause'
+17-12-2013 18:27:18 Core/Database/Query: GetAssoc error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pages_id' in 'where clause'
+17-12-2013 18:27:18 Core/Database/Query: GetAssoc error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pages_id' in 'where clause'
+17-12-2013 18:27:18 Core/Database/Query: GetAssoc error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pages_id' in 'where clause'
+17-12-2013 18:27:18 Core/Database/Query: GetAssoc error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pages_id' in 'where clause'
+17-12-2013 18:27:18 Core/Database/Query: GetAssoc error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pages_id' in 'where clause'
+17-12-2013 18:27:18 Core/Database/Query: GetAssoc error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pages_id' in 'where clause'

@@ -22,12 +22,14 @@ class image_model extends activerecord
 
     public function get_multiple_images($images)
     {
+        $image_model = new Image_model();
+        
         $image_names = array();
 
         $images = explode(',', $images);
 
         foreach ($images as $image) {
-            $image_names[] = $this->get_image_info($image);
+            $image_names[] = $image_model->get_image_info($image);
         }
 
         return $image_names;

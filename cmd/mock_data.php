@@ -1,4 +1,5 @@
 <?php
+namespace cmd;
 
 include 'cmd/base_admin.php';
 
@@ -38,7 +39,7 @@ class Mock_data extends Base_admin
 
 	public function get_associations ()
 	{
-		$model_name = $this->table . '_model';
+		$model_name = '\\app\models\\' . $this->table . '\\' . $this->table . '_model';
 		$model = new $model_name();
 
 		$this->has_one = $model->has_one;
@@ -216,7 +217,7 @@ class Mock_data extends Base_admin
 	}
 }
 
-$mock = new Mock_data();
+$mock = new \cmd\Mock_data();
 $mock->get_schema();
 $mock->get_associations();
 $mock->get_many_associations_schema();

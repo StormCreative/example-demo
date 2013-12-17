@@ -1,10 +1,10 @@
 <?php
 
-class dashboard extends application_controller
+class Dashboard extends \core\site\Application_controller
 {
 	public function index ()
 	{
-		$this->setView ( 'dashboard/index' );
+		$this->setView( 'dashboard/index' );
 	}
 }
 

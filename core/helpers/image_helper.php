@@ -41,6 +41,8 @@ class Image_helper
     {
         $ids = array();
 
+        die( print_r( $images ) );
+
         foreach ($images as $image) {
 
             if (!!$image[ 'imgname' ]) {
@@ -65,11 +67,11 @@ class Image_helper
     public static function multi_image_move()
     {
         
-        $n = count( $_FILES[ 'image' ][ 'name' ] ) - 1;
+        $n = count( $_FILES[ 'images' ][ 'name' ] ) - 1;
 
         for ($i = 0; $i < $n; $i++) {
-            $uploader = new AJAX_uploadify ( FALSE );
-            $_POST['multi-image'][] = array ( 'imgname' => $uploader->get_name () );
+            $uploader = new AJAX_uploadify( FALSE );
+            $_POST['multi-image'][] = array( 'imgname' => $uploader->get_name() );
 
             unset( $_FILES[ 'image' ][ 'name' ][ 0 ] );
             unset( $_FILES[ 'image' ][ 'type' ][ 0 ] );
@@ -83,5 +85,8 @@ class Image_helper
             $_FILES[ 'image' ][ 'error' ] = array_values( $_FILES[ 'image' ][ 'error' ] );
             $_FILES[ 'image' ][ 'size' ] = array_values( $_FILES[ 'image' ][ 'size' ] );
         }
+
+
+            die( print_r( $_POST ) );
     }
 }

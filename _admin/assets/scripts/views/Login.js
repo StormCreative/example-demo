@@ -34,11 +34,15 @@ define(['../../../../assets/scripts/utils/api-caller', '../utils/hogan', 'Backbo
 
             if ( this.validation_not_null( [ username, password ] ) == true ) {
 
-                $.ajax({ url: this.site_path + 'AJAX_login',
+                console.log( this.site_path + 'ajax_login' );
+
+                $.ajax({ url: this.site_path + 'ajax_login',
                      data: { username: username, password: password },
                      type: 'POST',
                      dataType: 'JSON',
                      success: _.bind(function ( data ) {
+
+                        console.log( data );
                         
                         if (data[0] == 'ok') {
                             window.location = this.site_path + 'dashboard';
