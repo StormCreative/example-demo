@@ -107,7 +107,7 @@ define(['jquery'], function($) {
 					                	'<input type="hidden" name="multi-image[' + data.filename + '][id]" value="" />' +
 					                	'<input type="hidden" name="multi-image[' + data.filename + '][imgname]" value="' + data.filename + '" />' +
 					                	' <p><label>URL: </label><input type="text" name="image_urls[]" class="medium_input" value="" /></p>' +
-					                    '<input type="button" class="btn del-image delete-image-js" data-id="" data-imagename="' + data.filename + '" data-gallery="" data-type="' + data.type + '" value="Delete" /></li>' +
+					                    '<input type="button" class="btn del-image js-delete-image-static" data-id="" data-imagename="' + data.filename + '" data-gallery="" data-type="' + data.type + '" value="Delete" /></li>' +
 					                '</ol>' +
 					            '</div>' );
 			}

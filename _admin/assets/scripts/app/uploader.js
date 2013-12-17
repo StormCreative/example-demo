@@ -69,7 +69,7 @@ define(['jquery'], function($) {
 		}
 		else if ( type == 'document' )
 		{
-			settings = { 'height' : 23, 'width' : 100, 'buttonText': 'Select Document', 'fileTypeExts' : ( !!allowed_extensions ? ext : '*.pdf' ), 'formData' : { 'type' : 'document' } };
+			settings = { 'height' : 23, 'width' : 100, 'buttonText': 'Select Document', 'fileTypeExts' : ( !!allowed_extensions ? ext : '*.pdf; *.doc; *.docx; *.xls; *.xlsx; *.txt; *.ppt; *.pptx;' ), 'formData' : { 'type' : 'document' } };
 			id = 'file_upload';
 		}
 		
@@ -179,7 +179,7 @@ define(['jquery'], function($) {
 			}
 			else
 			{
-				image_list.append ( '<p id="' + data.filename + '"><img src="' + window.site_path + 'assets/uploads/images/281/' + data.filename + '" title="' + file.name + '" /><input type="hidden" name="image" value="' + data.filename + '" /><input type="button" class="btn del-image delete-image-js" data-imagename="' + data.filename + '" data-type="' + data.type + '" value="Delete" /></p>' );
+				image_list.append ( '<p id="' + data.filename + '"><img src="' + window.site_path + 'assets/uploads/images/281/' + data.filename + '" title="' + file.name + '" /><input type="hidden" name="image" value="' + data.filename + '" /><input type="button" class="btn del-image js-delete-image-static" data-imagename="' + data.filename + '" data-type="' + data.type + '" value="Delete" /></p>' );
 			}
 
 			$('#imgname').val ( data.filename );
@@ -204,6 +204,10 @@ define(['jquery'], function($) {
 	function select_error ( file, errorCode, errorMsg ) {
 		feedback.append ( '<p>' + file.name + ' could not be uploaded. ' + errorMsg + '</p>' );
 	}
+
+	$(document).on('click', '.js-delete-image-static', function(e) {
+		$( e.target ).parent().parent().remove();
+	});
 	
 	//For some reason the on click didnt work so I had to do it like this
 	$(document).on('click', '.js-delete-image', function(e) {
