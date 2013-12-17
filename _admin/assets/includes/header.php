@@ -1,6 +1,6 @@
 <header class="settings">
     <ul class="settings__holder">
-        <li class="settings__holder--img"><img src="<?php echo DIRECTORY; ?>_admin/assets/images/logo.png" alt="Company Name" /></li>
+        <li class="settings__holder--img"></li>
         <li class="settings__holder--button"><a href="#" class="js-settings-button"><i class="cogs_icon icon-cogs"></i></a></li>
         <div class="js-settings-menu">
             <ul>

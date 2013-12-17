@@ -45,5 +45,25 @@ class home extends C_Controller
 
         $this->setView('home/page');
     }
+
+    public function page_1()
+    {
+
+    }
+
+    public function page_2()
+    {
+        
+    }
+
+    public function page_3()
+    {
+        
+    }
+
+    public function page_4()
+    {
+        
+    }
     
 }
