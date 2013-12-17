@@ -12,10 +12,9 @@ requirejs.config({
     }
 });
 
-require(['../views/Validation','../views/MobileNav','carousel'], function(Validation,MobileNav) {
+require(['../views/Validation','nav'], function(Validation) {
 
-    var validate = new Validation(),
-        MobileNav = new MobileNav();
+    var validate = new Validation()
 
 });
 

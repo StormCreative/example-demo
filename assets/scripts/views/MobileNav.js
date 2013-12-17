@@ -9,8 +9,8 @@ define(['Backbone'], function(){
         el: $('body'),
         
         events: {
-            'click .js-toggle-nav'      : 'show_nav',
-            'click .js-toggle-subnav'   : 'show_subnav'
+            'click .js-toggle-nav'      : 'show_nav'//,
+            //'click .js-toggle-subnav'   : 'show_subnav'
         },
 
         show_nav: function(e) {
@@ -18,7 +18,7 @@ define(['Backbone'], function(){
             $(e.target).parent().next().slideToggle('normal');
 
             e.preventDefault();
-        },
+        }/*,
 
         show_subnav: function(e) {
 
@@ -28,7 +28,7 @@ define(['Backbone'], function(){
                 var nav_height = nav.height();
                 var subnav_height = subnav.height();
 
-                //subnav.hide();
+                subnav.hide();
 
                 $(e.target).next().slideToggle('normal');
 
@@ -43,6 +43,7 @@ define(['Backbone'], function(){
             }
 
             e.preventDefault();
-        }
+        }*/
+        
     })
 });

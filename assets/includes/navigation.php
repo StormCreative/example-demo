@@ -4,7 +4,7 @@
 		<p class="nav__mobile-icon"><a href="" class="js-toggle-nav">&#9776;</a></p>
 		<ul class="nav__links grid__three-quarter">
 			<li>
-				<a href="" class="js-toggle-subnav" title="link 1">Link 1</a>
+				<a href="" class="js-toggle-subnav" title="link 1" id="link1">Link 1</a>
 				<div class="nav__sublinks">
 					<ul class="nav__sublinks--links">
 						<li><a href="">Link 1a</a></li>
@@ -16,7 +16,7 @@
 				</div>
 			</li>
 			<li>
-				<a href="" class="js-toggle-subnav" title="link 2">Link 2</a>
+				<a href="" class="js-toggle-subnav" title="link 2" id="link2">Link 2</a>
 				<div class="nav__sublinks">
 					<ul class="nav__sublinks--links">
 						<li><a href="">Link 2a</a></li>
@@ -28,7 +28,7 @@
 				</div>
 			</li>
 			<li>
-				<a href="" class="js-toggle-subnav" title="link 3">Link 3</a>
+				<a href="" class="js-toggle-subnav" title="link 3" id="link3">Link 3</a>
 				<div class="nav__sublinks">
 					<ul class="nav__sublinks--links">
 						<li><a href="">Link 3a</a></li>
@@ -40,7 +40,7 @@
 				</div>
 			</li>
 			<li>
-				<a href="" class="js-toggle-subnav" title="link 4">Link 4</a>
+				<a href="" class="js-toggle-subnav" title="link 4" id="link4">Link 4</a>
 				<div class="nav__sublinks">
 					<ul class="nav__sublinks--links">
 						<li><a href="">Link 4a</a></li>
@@ -52,7 +52,7 @@
 				</div>
 			</li>
 			<li>
-				<a href="" class="js-toggle-subnav" title="link 5">Link 5</a>
+				<a href="" class="js-toggle-subnav" title="link 5" id="link5">Link 5</a>
 				<div class="nav__sublinks">
 					<ul class="nav__sublinks--links">
 						<li><a href="">Link 5a</a></li>
@@ -64,7 +64,7 @@
 				</div>
 			</li>
 			<li>
-				<a href="" class="js-toggle-subnav" title="link 6">Link 6</a>
+				<a href="" class="js-toggle-subnav" title="link 6" id="link6">Link 6</a>
 				<div class="nav__sublinks">
 					<ul class="nav__sublinks--links">
 						<li><a href="">Link 6a</a></li>
