@@ -26,7 +26,7 @@
 			        <span class="images_holder"><img src="<?php echo DIRECTORY; ?>_admin/assets/uploads/images/<?php echo $image_imgname; ?>" /></span>
 			        <ol class="hoz btns">
 			            <input type="hidden" name="image" value="<?php echo $image_imgname; ?>" />
-			            <input type="button" class="del-image js-delete-image delete-btn" data-id="<?php echo $image_id;; ?>" data-imagename="<?php echo $image_imgname; ?>"  data-type="<?php echo $image_imgname; ?>" value="Delete" />
+			            <input type="button" class="del-image js-delete-image delete-btn" data-id="<?php echo $image_id; ?>" data-imagename="<?php echo $image_imgname; ?>"  data-type="<?php echo $image_imgname; ?>" value="Delete" />
 			        </ol>
 			    </div>
 			<?php endif; ?>
@@ -41,6 +41,9 @@
 				        <ol class="hoz btns">
 				            <input type="hidden" name="multi-image[<?php echo $item[ 'imgname' ]; ?>][id]" value="<?php echo $item[ 'id' ]; ?>" />
 				            <input type="hidden" name="multi-image[<?php echo $item[ 'imgname' ]; ?>][imgname]" value="<?php echo $item[ 'imgname' ]; ?>" />
+
+				            <p><label>URL: </label><input type="text" name="image_urls[]" class="medium_input" value="<?php echo $item[ 'url' ]; ?>" /></p>
+
 				            <input type="button" class="del-image js-delete-image delete-btn" data-id="<?php echo $item[ 'id' ]; ?>" data-imagename="<?php echo $item[ 'imgname' ]; ?>"  data-type="<?php echo $item[ 'imgname' ]; ?>" value="Delete" />
 				        </ol>
 				    </div>

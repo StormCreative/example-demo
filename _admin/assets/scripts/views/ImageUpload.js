@@ -174,7 +174,7 @@ define(['../../../../assets/scripts/utils/api-caller', 'Backbone'], function(api
         },
 
         append_delete_button: function () {
-            $( '.container_' + this.container_count ).append( '<p class="js-remove-image" data-image-number="' + this.container_count + '" style="cursor: pointer;">Delete</p>' );
+            $( '.container_' + this.container_count ).append( '<p><label>URL: </label><input type="text" name="image_urls[]" class="medium_input" value="" /></p><p class="js-remove-image" data-image-number="' + this.container_count + '" style="cursor: pointer;">Delete</p>' );
         },
 
         /**
