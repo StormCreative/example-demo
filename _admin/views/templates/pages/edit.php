@@ -23,7 +23,7 @@
 			<div class="js-upload-container" data-type="image" data-name="header-image"></div>
 			<?php if( !!$image_imgname ) : ?>
 				<div id="<?php echo $image_imgname; ?>" class="image_<?php echo $image_id; ?>">
-			        <span class="images_holder"><img src="<?php echo DIRECTORY; ?>_admin/assets/uploads/images/<?php echo $image_imgname; ?>" /></span>
+			        <span class="images_holder"><img src="<?php echo DIRECTORY; ?>_admin/assets/uploads/images/281/<?php echo $image_imgname; ?>" /></span>
 			        <ol class="hoz btns">
 			            <input type="hidden" name="image" value="<?php echo $image_imgname; ?>" />
 			            <input type="button" class="del-image js-delete-image delete-btn" data-id="<?php echo $image_id; ?>" data-imagename="<?php echo $image_imgname; ?>"  data-type="<?php echo $image_imgname; ?>" value="Delete" />
@@ -40,7 +40,7 @@
 			<?php if ( !!$gallery_items ) : ?>
 				<?php foreach ( $gallery_items as $item ) : ?>
 				    <div id="<?php echo $item['imgname'] ?>" class="image_<?php echo $item[ 'id' ]; ?>">
-				        <span class="images_holder"><img src="<?php echo DIRECTORY; ?>_admin/assets/uploads/images/<?php echo $item[ 'imgname' ]; ?>" /></span>
+				        <span class="images_holder"><img src="<?php echo DIRECTORY; ?>_admin/assets/uploads/images/281/<?php echo $item[ 'imgname' ]; ?>" /></span>
 				        <ol class="hoz btns">
 				            <input type="hidden" name="multi-image[<?php echo $item[ 'imgname' ]; ?>][id]" value="<?php echo $item[ 'id' ]; ?>" />
 				            <input type="hidden" name="multi-image[<?php echo $item[ 'imgname' ]; ?>][imgname]" value="<?php echo $item[ 'imgname' ]; ?>" />
@@ -86,11 +86,11 @@
 				</div>
 			<?php endif; ?>
 
+			<p><a href="#" class="js-add-another-link">Add another +</a></p>
+
 			<h2>SEO</h2>
 			<p><label>Meta title:</label><input type="text" name="pages[meta_title]" class="medium_input" value="<?php echo $meta_title; ?>"></p>
 			<p><label>Meta Description:</label><input type="text" name="pages[meta_description]" class="medium_input" value="<?php echo $meta_description; ?>"></p>
-
-			<p><a href="#" class="js-add-another-link">Add another +</a></p>
 
 			<p><input type="submit" name="submit" value="Save" /></p>
 		</form>

@@ -74,6 +74,8 @@ define(['../../../../assets/scripts/utils/api-caller', 'Backbone'], function(api
                                                       '<span class="action">Upload File</span>' +
                                                   '</div>' +
                                                   '<div class="js-documents"></div>' );
+
+            $( '#multi-image-page' ).hide();
         },
 
         get_image: function ( e ) {
