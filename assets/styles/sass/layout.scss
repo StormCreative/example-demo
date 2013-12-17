@@ -10,3 +10,64 @@ header {
 		width: 960px;
 	}
 }
+
+.side-img {
+	display: block;
+	margin: 1em auto 2em;
+	max-width: 100%;
+}
+
+.downloads {
+	margin: 1.5em 0;
+}
+
+.btn {
+	background: #8B8B8B;
+	color: #FFF;
+	margin-left: 1em;
+	padding: 0.5em;
+	text-decoration: none;
+
+	@include border-radius(0.375em);
+
+	&:hover,
+	&:focus {
+		background: darken(#8B8B8B, 10%);
+	}
+}
+
+.link {
+	color: #000;
+}
+
+a {
+	@include transition;
+}
+
+.changes {
+	padding: 1em 0;
+	text-align: center;
+}
+
+.accept-btn,
+.decline-btn {
+	display: inline-block;
+}
+
+.accept-btn {
+	background: #279E0E;
+
+	&:hover,
+	&:focus {
+		background: darken(#279E0E, 10%);
+	}
+}
+
+.decline-btn {
+	background: darken(#ED1B24, 5%);
+
+	&:hover,
+	&:focus {
+		background: darken(#ED1B24, 15%);
+	}
+}

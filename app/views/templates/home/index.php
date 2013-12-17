@@ -5,8 +5,19 @@
 		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
 		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
 		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+		<p class="downloads">Download document 1 <a href="#" class="btn">Download</a></p>
+		<p class="downloads">Download document 2 <a href="#" class="btn">Download</a></p>
+		<p class="downloads">Download document 3 <a href="#" class="btn">Download</a></p>
+		<p><a href="#" class="link">Link 1</a></p>
+		<p><a href="#" class="link">Link 2</a></p>
+		<p><a href="#" class="link">Link 3</a></p>
+		<p><a href="#" class="link">Link 4</a></p>
 	</div>
 </div>
 <div class="grid__third">
-	<p class="example">third</p>
+	<div class="example">
+		<img src="<?php echo DIRECTORY; ?>assets/images/header-home.jpg" class="side-img" />
+		<img src="<?php echo DIRECTORY; ?>assets/images/header-home.jpg" class="side-img" />
+		<img src="<?php echo DIRECTORY; ?>assets/images/header-home.jpg" class="side-img" />
+	</div>
 </div>

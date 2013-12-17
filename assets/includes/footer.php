@@ -10,3 +10,7 @@
 		</ul>
 	</div>
 </footer>
+<div class="changes">
+	<a href="#" class="btn accept-btn">Accept</a>
+	<a href="#" class="btn decline-btn">Decline</a>
+</div>
