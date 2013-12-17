@@ -19,7 +19,9 @@ FOOTER
 */
 
 .footer {
-	background: #CCC;
+	background: #007AC2;
+	margin-top: 0.5em;
+	padding: 0.25em 0;
 	text-align: center;
 
 	.footer__links {
@@ -29,14 +31,14 @@ FOOTER
 		}
 
 		a {
-			color: #000;
+			color: #FFE600;
 			text-decoration: none;
 
 			@include transition;
 
 			&:hover,
 			&:focus {
-				color: lighten(#000, 25%);
+				color: lighten(#FFE600, 25%);
 			}
 		}
 	}

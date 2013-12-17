@@ -4,7 +4,7 @@
 header {
 	img {
 		display: block;
-		height: 220px;
+		height: 271px;
 		margin: 0 auto;
 		max-width: 100%;
 		width: 960px;
@@ -13,8 +13,8 @@ header {
 
 .side-img {
 	display: block;
-	margin: 1em auto 2em;
-	max-width: 100%;
+	margin: 0 0 0.5em;
+	//max-width: 100%;
 }
 
 .downloads {
@@ -37,7 +37,18 @@ header {
 }
 
 .link {
-	color: #000;
+	background: #007AC2;
+	color: #FFDD00;
+	display: inline-block;
+	font-size: 0.875em;
+	margin: 0.5em 0;
+	padding: 0.25em 1em;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		background: darken(#007AC2, 10%);
+	}
 }
 
 a {

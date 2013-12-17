@@ -35,9 +35,9 @@
                 <?php if (!!$image) : ?>
                 <img src="<?php echo DIRECTORY; ?>_admin/assets/uploads/images/960-220/<?php echo $image; ?>" />
                 <?php elseif ($home_page): ?>
-                <img src="<?php echo DIRECTORY; ?>assets/images/header-grey-home.jpg" />
+                <img src="<?php echo DIRECTORY; ?>assets/images/flu-header.jpg" />
                 <?php else: ?>
-                <img src="<?php echo DIRECTORY; ?>assets/images/header-grey.jpg" />
+                <img src="<?php echo DIRECTORY; ?>assets/images/flu-header.jpg" />
                 <?php endif; ?>
             </header>
             <div class="container content grid">

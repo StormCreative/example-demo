@@ -193,7 +193,9 @@ INLINE NAVIGATION
 		@include bp(desktop) {
 			background: none;
 			display: inline-block;
-			text-align: right;
+			padding: 0;
+			text-align: left;
+			width: 100%;
 		}
 		
 		li {
@@ -201,7 +203,7 @@ INLINE NAVIGATION
 			@include bp(desktop) {
 				border-top: none;
 				display: inline-block;
-				margin-left: 1em;
+				margin-left: 3em;
 
 				&:first-child {
 					margin-left: 0;
@@ -211,9 +213,13 @@ INLINE NAVIGATION
 	}
 
 	a {
-		color: $nav-font-color;
+		color: #007AC2;
 		text-decoration: none;
 		@include transition;
+
+		&.active {
+			color: $nav-font-color;
+		}
 
 		&:hover,
 		&:focus {
@@ -477,7 +483,7 @@ NAV - LINK TOGGLE BRINGS DROPDOWN
 			position: absolute;
 			right: 0;
 			text-align: left;
-			top: 43px;
+			top: 32px;
 		}
 
 		.nav__sublinks--links {

@@ -15,7 +15,7 @@ If you need to change the way a sector is styled then add a class and style that
 
 		& > * {
 			letter-spacing: normal; // makes all the letter spacing with our grid class have letter spacing of normal
-			padding: $grid-margin;
+			//padding: 0 $grid-margin 0 0;
 		}
 	}
 
@@ -23,7 +23,7 @@ If you need to change the way a sector is styled then add a class and style that
 	[class*='grid__'] {
 		display: block;
 		list-style: none;
-		padding: ($grid-margin / 2) $grid-margin;
+		//padding: ($grid-margin / 2) $grid-margin;
 		//text-align: center;
 		vertical-align: top;
 		width: 100%; // default all our classes that have grid__ will be 100% for our mobile
@@ -44,14 +44,25 @@ If you need to change the way a sector is styled then add a class and style that
 	// Grid third
 	.grid__third {
 		@include bp(desktop) {
-			width: 33.33333%;
+			padding-left: 1em;
+			width: 31%;
+
+			.example {
+				padding: 0;
+			}
 		}
 	}
 
 	// Grid two third
 	.grid__two-third {
 		@include bp(desktop) {
-			width: 66.66666%;
+			background: #FFF;
+			padding-right: 1em;
+			width: 69%;
+
+			.example {
+				padding: 1em 1em 2em;
+			}
 		}
 	}
 

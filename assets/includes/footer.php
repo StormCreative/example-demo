@@ -1,3 +1,5 @@
+<img src="<?php echo DIRECTORY; ?>assets/images/ccg-foot.jpg" />
+
 <footer class="footer">
 	<div class="container">
 		<ul class="footer__links">

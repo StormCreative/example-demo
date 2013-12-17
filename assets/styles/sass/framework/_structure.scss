@@ -51,22 +51,23 @@ body {
 }
 
 .container {
-	margin: auto;
+	margin: 0.75em auto;
 	//min-width: 60em; // when we are doing a desktop build need to include our min-width as 60em! This is the default that devices read, any bigger then will have to scroll
 	max-width: $container-width;
 	
 	@include bp(desktop) {
-		padding: $container-padding;
+		//padding: $container-padding;
 	}
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-weight: normal;
+	//font-weight: normal;
 }
 
 h1 {
+	color: #007AC2;
 	margin: 0;
-	padding-top: $container-padding;
+	//padding-top: $container-padding;
 }
 
 img {
