@@ -1,4 +1,3 @@
-<!-- Inline navigation with the logo on the left and links on the right. Also this type of nav can be made to be fixed -->
 <nav class="nav nav-inline mobile-nav">
 	<div class="container grid">
 		<p class="nav__logo"><a href="<?php echo DIRECTORY; ?>" title="Example">Example</a></p>

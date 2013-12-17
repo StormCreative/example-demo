@@ -32,6 +32,10 @@
             <?php require "assets/includes/ie-notification.php"; flush(); ?>
             <?php include "assets/includes/navigation.php"; ?>
             <header>
+                <?php if (!!Image_model::get_image_info($image_id)) : ?>
+                <img src="<?php echo DIRECTORY; ?>_admin/assets/uploads/images/960-220/<?php echo Image_model::get_image_info($image_id); ?>" />
+                <?php else; ?>
                 <img src="<?php echo DIRECTORY; ?>assets/images/header-home.jpg" />
+                <?php endif; ?>
             </header>
             <div class="container content grid">

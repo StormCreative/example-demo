@@ -33,6 +33,8 @@ class home extends C_Controller
         // Whatever these SEO bits are in the database table
         $this->addTag('title', $pages_model->seo_title);
         $this->addTag( 'meta_desc', $pages_model->seo_desc);
+
+        $this->setView('home/page');
     }
     
 }

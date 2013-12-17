@@ -19,4 +19,24 @@ class image_model extends activerecord
     		$image_model->save( array( 'imgname' => $image[ 'imgname' ], 'news_id' => $post_id ) );
     	}
     }
+
+    public function get_multiple_images($images)
+    {
+        $image_names = array();
+
+        $images = explode(',', $images);
+
+        foreach ($images as $image) {
+            $image_names[] = $this->get_image_info($image);
+        }
+
+        return $image_names;
+    }
+
+    public function get_image_info($id)
+    {
+        $this->find($id);
+
+        return $this->imgname;
+    }
 }

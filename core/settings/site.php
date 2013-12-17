@@ -21,7 +21,7 @@
 | This is referenced within the overall header as constant
 |
 */
-	$settings[ 'SITE_NAME' ] = '<<Site name>>';
+	$settings[ 'SITE_NAME' ] = 'CMS Demonstration';
 
 /*
 |----------------------------------------------------------------
