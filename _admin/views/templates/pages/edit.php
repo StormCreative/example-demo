@@ -9,10 +9,10 @@
 				<label>Page</label>
 				<select name="pages[main_pages_id]">
 					<option value="">Select...</option>
-					<option value="1">Page A</option>
-					<option value="2">Page B</option>
-					<option value="3">Page C</option>
-					<option value="4">Page D</option>
+					<option value="1" <?php echo( $main_pages_id == 1 ? 'selected="selected"' : '' ); ?>>Page A</option>
+					<option value="2" <?php echo( $main_pages_id == 2 ? 'selected="selected"' : '' ); ?>>Page B</option>
+					<option value="3" <?php echo( $main_pages_id == 3 ? 'selected="selected"' : '' ); ?>>Page C</option>
+					<option value="4" <?php echo( $main_pages_id == 4 ? 'selected="selected"' : '' ); ?>>Page D</option>
 				</select>
 			</p>
 
@@ -49,12 +49,14 @@
 
 			<div class="js-uploads-container" data-type="document"></div>
 			<input type="hidden" name="pages[uploads_id]" value="<?php echo $uploads_id; ?>" />
-			<?php if ( !!$uploads_id && !!$upload_name ) : ?>
-				<div class="js-existing-upload-container">
-					<input type="text" name="uploads[title]" value="<?php echo $upload_title; ?>" /> - <button type="button" class="js-delete-upload" data-id="<?php echo $uploads_id; ?>" data-upload-name="<?php echo $upload_name; ?>">X Delete</button>
-					<input type="hidden" name="uploads[id]" value="<?php echo $uploads_id; ?>" />
-					<input type="hidden" name="uploads[name]" value="<?php echo $upload_name; ?>" />
-				</div>
+			<?php if ( !!$uploads ) : ?>
+				<?php foreach( $uploads as $upload ) : ?>
+					<div class="js-existing-upload-container">
+						<input type="text" name="uploads[title]" value="<?php echo $upload[ 'title' ]; ?>" /> - <button type="button" class="js-delete-upload" data-id="<?php echo $upload[ 'id' ]; ?>" data-upload-name="<?php echo $upload[ 'name' ]; ?>">X Delete</button>
+						<input type="hidden" name="uploads[id]" value="<?php echo $upload[ 'id' ]; ?>" />
+						<input type="hidden" name="uploads[name]" value="<?php echo $upload[ 'name' ]; ?>" />
+					</div>
+				<?php endforeach; ?>
 			<?php endif; ?>
 
 			<h2>Links</h2>

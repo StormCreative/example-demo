@@ -8,7 +8,7 @@ class AJAX_delete
     public function __Construct ()
     {
         $this->_image = new image_model();
-        //$this->_upload = new uploads_model();
+        $this->_upload = new uploads_model();
     }
 
     public function normal_delete ()
@@ -27,11 +27,11 @@ class AJAX_delete
     public function normal_upload ()
     {
         if (!!$_POST) {
-            if ( $this->_upload->delete ( $_POST[ 'id' ] ) ) {
-                if ( unlink ( PATH . '_admin/assets/uploads/documents/' . $_POST[ 'name' ] ) )
+            if ( $this->_upload->delete( '', $_POST[ 'id' ] ) ) {
+                //if ( unlink ( PATH . '_admin/assets/uploads/documents/' . $_POST[ 'name' ] ) )
                     $return = array( 'status' => 200 );
-                else
-                    $return = array( 'status' => 400 );
+               // else
+                    //$return = array( 'status' => 400 );
             }
         }
 
