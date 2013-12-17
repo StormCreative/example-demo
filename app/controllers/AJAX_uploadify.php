@@ -38,21 +38,28 @@ class AJAX_uploadify
             $filename = $this->get_random_name( $true_name );
 
             if ( in_array ( $this->get_ext( $filename ), $options[ 'file_type' ] ) ) {
+
                 if ( LIVE ) {
                     $im = new Imagick ( $tempFile );
                     $im->setImageCompressionQuality ( 100 );
-                    $im->thumbnailImage ( 280, 0, FALSE );
-                    $im->writeImage ( $options[ 'dest' ] .'280/'. $filename );
+                    $im->thumbnailImage( 281, 0, FALSE );
+                    $im->writeImage ( $options[ 'dest' ] . '281/' . $filename );
 
                     $im = new Imagick ( $tempFile );
                     $im->setImageCompressionQuality ( 100 );
-                    $im->thumbnailImage ( 960, 0, FALSE );
-                    $im->writeImage ( $options[ 'dest' ] .'960/'. $filename );
+                    $im->thumbnailImage( 960, 0, FALSE );
+                    $im->writeImage ( $options[ 'dest' ] . '960/' . $filename );
+
                 } else {
                     $si = new simple_image ();
                     $si->load ( $true_tmp_name );
-                    $si->resize_crop ( 500, 350 );
-                    $si->save ( $options[ 'dest' ] . $filename );
+                    $si->resizeToWidth( 281 );
+                    $si->save ( $options[ 'dest' ] . '281/' . $filename );
+
+                    $si = new simple_image ();
+                    $si->load ( $true_tmp_name );
+                    $si->resizeToWidth( 960 );
+                    $si->save ( $options[ 'dest' ] . '960/' . $filename );
                 }
 
                 $this->handle_return( $filename, $_POST[ 'type' ], $true_name );
@@ -106,7 +113,7 @@ class AJAX_uploadify
         }
 
         if ($this->_uploadify == TRUE) {
-            $data = $files[ $type ];
+            $data = $_FILES[ 'image' ][ $type ];
         } else {
             $data = $files[ $type ][0];
         }

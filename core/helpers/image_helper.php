@@ -40,14 +40,16 @@ class Image_helper
     public static function save_many($images)
     {
         $ids = array();
-
+        $c = 0;
         foreach ($images as $image) {
 
             if (!!$image[ 'imgname' ]) {
                 $image_model = new image_model();
-                $image_model->save( array( 'imgname' => $image[ 'imgname' ] ) );
+                $image_model->save( array( 'imgname' => $image[ 'imgname' ], 'url' => $_POST[ 'image_urls' ][$c] ) );
                 $ids[] = $image_model->attributes[ 'id' ];
             }
+
+            $c++;
         }
 
         return $ids;

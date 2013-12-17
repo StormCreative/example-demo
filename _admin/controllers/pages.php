@@ -21,6 +21,20 @@ class pages extends application_controller
 
 		if ( post_set() )
 		{
+			//die( print_r( $_FILES ) );
+			//die( print_r( $_POST ) );
+			//Handle the image
+            if ( !!$_POST["image"] || !!$_FILES ) {
+            	$_POST[ "pages" ][ "image_id" ] = Image_helper::save_one( $_POST[ "image" ] );
+            }
+            else {
+                $_POST[ "pages" ][ "image_id" ] = NULL;
+            }
+
+            Image_helper::multi_image_move( $_FILES[ 'images' ] );
+            if( !!$_POST['multi-image'] ) {
+        		$_POST[ "pages" ][ "gallery" ] = implode( ',', Image_helper::save_many( $_POST['multi-image'] ) );
+        	}
 
 			if ( !$this->_pages->save( $_POST[ 'pages' ] ) ) {
 				$feedback = organise_feedback( $this->_pages->errors, TRUE );
@@ -32,24 +46,9 @@ class pages extends application_controller
 					$this->process_links();
 				}
 
-				//die( print_r( $_FILES ) );
-				//die( print_r( $_POST ) );
-				//Handle the image
-	            if ( !!$_POST["image"] || !!$_FILES ) {
-	            	$_POST[ "pages" ][ "image_id" ] = Image_helper::save_one( $_POST[ "image" ] );
-	            }
-	            else {
-	                $_POST[ "pages" ][ "image_id" ] = NULL;
-	            }
-
-	            Image_helper::multi_image_move( $_FILES[ 'images' ] );
-	            if( !!$_POST['multi-image'] ) {
-	        		$_POST[ "pages" ][ "gallery" ] = implode( ',', Image_helper::save_many( $_POST['multi-image'] ) );
-	        	}
-
 				//If the user has selected some files to upload run this
 	           //Send the $_FILES array to the application controller for the saving to be handled
-	           if ( !!$_FILES[ "uploads" ] ) {
+	           if ( !!$_FILES[ "uploads" ] || !!$_POST[ 'downloads' ] ) {
 	               Document_helper::save( $this->_pages->attributes[ 'id' ] );
 	           }
 			}

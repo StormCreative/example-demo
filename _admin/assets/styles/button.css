@@ -210,6 +210,6 @@ input[type=checkbox]:checked + .btn {
 .images_upload {
 	background: url(../images/upload_images.png)no-repeat;
 	height: 24px;
-	margin: 10px 0;
+	margin: 24px 0;
 	width: 103px;
 }

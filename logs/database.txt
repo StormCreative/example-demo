@@ -1,4 +1,5 @@
 17-12-2013 17:49:00 Core/Database/Query: GetObj error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'example_demo.example_demo_uploads' doesn't exist
+<<<<<<< HEAD
 17-12-2013 18:26:29 Core/Database/Query: GetAssoc error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pages_id' in 'where clause'
 17-12-2013 18:26:29 Core/Database/Query: GetAssoc error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pages_id' in 'where clause'
 17-12-2013 18:26:30 Core/Database/Query: GetAssoc error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pages_id' in 'where clause'
@@ -10,3 +11,13 @@
 17-12-2013 18:27:18 Core/Database/Query: GetAssoc error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pages_id' in 'where clause'
 17-12-2013 18:27:18 Core/Database/Query: GetAssoc error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pages_id' in 'where clause'
 17-12-2013 18:27:18 Core/Database/Query: GetAssoc error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pages_id' in 'where clause'
+=======
+17-12-2013 20:10:16 Core/Database/Query: GetAssoc error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pages_id' in 'where clause'
+>>>>>>> 33f8c86b31082e5bce2c5413d0a77fd96a53f754
+17-12-2013 20:49:01 Core/Database/Query: GetAssoc error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ordered' in 'order clause'
+17-12-2013 20:49:02 Core/Database/Query: GetAssoc error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ordered' in 'order clause'
+17-12-2013 20:49:06 Core/Database/Query: GetAssoc error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ordered' in 'order clause'
+17-12-2013 20:49:07 Core/Database/Query: GetAssoc error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ordered' in 'order clause'
+17-12-2013 20:49:07 Core/Database/Query: GetAssoc error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ordered' in 'order clause'
+17-12-2013 20:49:08 Core/Database/Query: GetAssoc error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ordered' in 'order clause'
+17-12-2013 20:49:09 Core/Database/Query: GetAssoc error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ordered' in 'order clause'

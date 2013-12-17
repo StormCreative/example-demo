@@ -148,6 +148,13 @@ abstract class activerecord
         return $this;
     }
 
+    public function order_by( $column, $type = DESC )
+    {  
+        $this->_order_by = $column . ' ' . $type;
+        
+        return $this;
+    }
+
     /**
      * Build the where condition out of the class where array
      *
@@ -229,6 +236,7 @@ abstract class activerecord
         $options['order_by'] = $this->_order_by;
         $options['where'] = $this->build_where_clause();
         $options['limit'] = $this->_limit;
+        $options[ 'order_by' ] = $this->_order_by;
 
         $output = $this->table()->find( $options );
 

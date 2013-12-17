@@ -23,10 +23,10 @@
 			<div class="js-upload-container" data-type="image" data-name="header-image"></div>
 			<?php if( !!$image_imgname ) : ?>
 				<div id="<?php echo $image_imgname; ?>" class="image_<?php echo $image_id; ?>">
-			        <span class="images_holder"><img src="<?php echo DIRECTORY; ?>_admin/assets/uploads/images/<?php echo $image_imgname; ?>" /></span>
+			        <span class="images_holder"><img src="<?php echo DIRECTORY; ?>_admin/assets/uploads/images/281/<?php echo $image_imgname; ?>" /></span>
 			        <ol class="hoz btns">
 			            <input type="hidden" name="image" value="<?php echo $image_imgname; ?>" />
-			            <input type="button" class="del-image js-delete-image delete-btn" data-id="<?php echo $image_id;; ?>" data-imagename="<?php echo $image_imgname; ?>"  data-type="<?php echo $image_imgname; ?>" value="Delete" />
+			            <input type="button" class="del-image js-delete-image delete-btn" data-id="<?php echo $image_id; ?>" data-imagename="<?php echo $image_imgname; ?>"  data-type="<?php echo $image_imgname; ?>" value="Delete" />
 			        </ol>
 			    </div>
 			<?php endif; ?>
@@ -34,13 +34,19 @@
 			<h2>Banner Images</h2>
 			<div class="js-upload-container" data-type="image" data-name="banner-images"></div>
 
+			<div id="image-list-multi-js"></div>
+			<input type="file" name="file_upload" class="upload-fix" id="multi-image-page" />
+
 			<?php if ( !!$gallery_items ) : ?>
 				<?php foreach ( $gallery_items as $item ) : ?>
 				    <div id="<?php echo $item['imgname'] ?>" class="image_<?php echo $item[ 'id' ]; ?>">
-				        <span class="images_holder"><img src="<?php echo DIRECTORY; ?>_admin/assets/uploads/images/<?php echo $item[ 'imgname' ]; ?>" /></span>
+				        <span class="images_holder"><img src="<?php echo DIRECTORY; ?>_admin/assets/uploads/images/281/<?php echo $item[ 'imgname' ]; ?>" /></span>
 				        <ol class="hoz btns">
 				            <input type="hidden" name="multi-image[<?php echo $item[ 'imgname' ]; ?>][id]" value="<?php echo $item[ 'id' ]; ?>" />
 				            <input type="hidden" name="multi-image[<?php echo $item[ 'imgname' ]; ?>][imgname]" value="<?php echo $item[ 'imgname' ]; ?>" />
+
+				            <p><label>URL: </label><input type="text" name="image_urls[]" class="medium_input" value="<?php echo $item[ 'url' ]; ?>" /></p>
+
 				            <input type="button" class="del-image js-delete-image delete-btn" data-id="<?php echo $item[ 'id' ]; ?>" data-imagename="<?php echo $item[ 'imgname' ]; ?>"  data-type="<?php echo $item[ 'imgname' ]; ?>" value="Delete" />
 				        </ol>
 				    </div>
@@ -81,6 +87,10 @@
 			<?php endif; ?>
 
 			<p><a href="#" class="js-add-another-link">Add another +</a></p>
+
+			<h2>SEO</h2>
+			<p><label>Meta title:</label><input type="text" name="pages[meta_title]" class="medium_input" value="<?php echo $meta_title; ?>"></p>
+			<p><label>Meta Description:</label><input type="text" name="pages[meta_description]" class="medium_input" value="<?php echo $meta_description; ?>"></p>
 
 			<p><input type="submit" name="submit" value="Save" /></p>
 		</form>

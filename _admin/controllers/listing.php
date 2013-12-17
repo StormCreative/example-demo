@@ -37,8 +37,13 @@ class listing extends Application_controller
             }
         }
 
-        $data = $model->all( $binds );
-
+        if( !!$_GET[ 'id' ] ) {
+            $data = $model->where( 'main_pages_id = :main_pages_id' )->order_by( 'ordered', ASC )->all( array( 'main_pages_id' => $_GET[ 'id' ] ) );
+        }
+        else {
+            $data = $model->all( $binds );
+        }
+        
         //We dont actually want a approved column so we need to unset it from the columns array before we explode it
         $x_columns = explode ( ',', $columns );
 

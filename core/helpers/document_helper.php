@@ -10,7 +10,7 @@ class Document_helper
      */
     public static function save( $id = "" )
     {
-        $c = count( $_POST[ 'upload_name' ][ 'actual' ] );
+        $c = count( !!$_POST[ 'upload_name' ][ 'actual' ] ? $_POST[ 'upload_name' ][ 'actual' ] : $_POST[ 'downloads' ] );
 
         $ids = array();
 

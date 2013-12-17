@@ -16,6 +16,16 @@ class Ajax
 
 		die( json_encode( $result ) );
 	}
+
+	public function update_order()
+	{
+		if( !!$_POST ) {
+			foreach( $_POST[ 'items' ] as $item ) {
+				$pages_model = new Pages_model();
+				$pages_model->save( array( 'id' => $item[ 'id' ], 'ordered' => $item[ 'order' ] ) );
+			}
+		}
+	}
 }
 
 

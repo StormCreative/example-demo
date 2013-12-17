@@ -74,6 +74,8 @@ define(['../../../../assets/scripts/utils/api-caller', 'Backbone'], function(api
                                                       //'<span class="action">Upload File</span>' +
                                                   '</div>' +
                                                   '<div class="js-documents"></div>' );
+
+            $( '#multi-image-page' ).hide();
         },
 
         get_image: function ( e ) {
@@ -174,7 +176,7 @@ define(['../../../../assets/scripts/utils/api-caller', 'Backbone'], function(api
         },
 
         append_delete_button: function () {
-            $( '.container_' + this.container_count ).append( '<p class="js-remove-image" data-image-number="' + this.container_count + '" style="cursor: pointer;">Delete</p>' );
+            $( '.container_' + this.container_count ).append( '<p><label>URL: </label><input type="text" name="image_urls[]" class="medium_input" value="" /></p><p class="js-remove-image" data-image-number="' + this.container_count + '" style="cursor: pointer;">Delete</p>' );
         },
 
         /**
@@ -401,8 +403,6 @@ define(['../../../../assets/scripts/utils/api-caller', 'Backbone'], function(api
                      type: 'POST',
                      dataType: 'JSON',
                      success: function ( data ) {
-
-                        console.log( data );
 
                          if ( data[ 'status' ] == 200 ) {
                              $( target ).parent().remove();

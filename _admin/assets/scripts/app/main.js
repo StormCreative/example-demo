@@ -16,10 +16,12 @@ require( ['../views/Wysiwyg','settings', 'mobilenav', 'add-another-link'], funct
     var wysiwyg = new Wysiwyg();
 });
 
+/**
 if ( window.File && window.FileReader && window.FileList && window.Blob ) {
     require(['../views/ImageUpload'], function(ImageUpload) {
         var imageupload = new ImageUpload ();
     });
 }
 else
-    require([ 'uploader' ]);
+**/
+    require([ 'uploader', 'multi-image-uploadify' ]);
